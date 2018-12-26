@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite
+        PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+
+    <rule>
+        <from>/index.html</from>
+        <to>/index.jsp</to>
+    </rule>
+
+   <rule>
+       <from>/showContent/([A-Za-z0-9]+).html</from>
+       <to>/showContent?id=$1</to>
+   </rule>
+
+   <!-- <rule>
+        <note>forward(转发模式)传参</note>
+        <note>example：/user/param/fancy/8080.do</note>
+        <from>/user/([A-Za-z0-9]+)/([A-Za-z0-9]+)/([A-Za-z0-9]+).do</from>
+        <to type="forward">/view/parameter/$1.jsp?username=$2&amp;password=$3</to>
+    </rule>-->
+
+    <!--<rule>
+        <note>redirect(重定向模式)传参,to中写绝对地址</note>
+        <note>example：/admin/param/fancy/8080.do</note>
+        <from>/admin/([A-Za-z0-9]+)/([A-Za-z0-9]+)/([A-Za-z0-9]+).do</from>
+        <to type="redirect">/urlrewrite-maven-example/view/parameter/$1.jsp?username=$2&amp;password=$3</to>
+    </rule>-->
+
+</urlrewrite>
