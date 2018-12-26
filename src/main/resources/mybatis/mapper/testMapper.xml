@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.software.manager.mapper.TestMapper">
+
+    <resultMap id="baseMap" type="com.nchu.software.manager.domain.TestDoamin">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="date" column="date"/>
+    </resultMap>
+
+    <select id="getByid" resultMap="baseMap">
+        select id,name,date from test where id = #{id};
+    </select>
+
+    <select id="listAll" resultMap="baseMap">
+        select id,name,date from test;
+    </select>
+</mapper>
