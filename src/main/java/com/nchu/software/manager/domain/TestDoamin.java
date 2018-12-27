@@ -1,6 +1,7 @@
 package com.nchu.software.manager.domain;
 
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -18,6 +19,8 @@ import java.util.Date;
 public class TestDoamin {
     private int id;
     private String name;
+
+    //@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
 
 }

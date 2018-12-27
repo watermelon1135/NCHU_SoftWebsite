@@ -3,8 +3,11 @@
 <html>
 <body>
 
-    <form action="/">
-
+    <form action="/test" method="post">
+        名字：<input type="text" name="name"><br>
+        日期：<input type="date" name="date">
+        <br>
+        <input type="submit" value="提交">
     </form>
 </body>
 </html>

@@ -20,7 +20,7 @@ public class CustomDateConverter implements Converter<String,Date> {
 
     @Override
     public Date convert(String source) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
             //解析成功就返回
             return sdf.parse(source);

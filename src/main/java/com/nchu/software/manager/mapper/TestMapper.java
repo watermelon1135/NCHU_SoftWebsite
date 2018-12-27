@@ -1,6 +1,7 @@
 package com.nchu.software.manager.mapper;
 
-import com.nchu.software.manager.domain.test;
+
+import com.nchu.software.manager.domain.TestDoamin;
 
 import java.util.List;
 
@@ -13,5 +14,5 @@ import java.util.List;
  **/
 public interface TestMapper {
 
-    List<test> listAll();
+    List<TestDoamin> listAll();
 }

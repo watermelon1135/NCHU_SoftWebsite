@@ -9,7 +9,19 @@
     <!--去哪扫描四大组件-->
     <context:component-scan base-package="com.nchu.software"/>
 
-    <mvc:annotation-driven/>
+
+
+
+    <mvc:annotation-driven conversion-service="conversionService">
+
+    </mvc:annotation-driven>
+
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+        <!-- 自定义转换器的类名 -->
+        <bean class="com.nchu.software.format.CustomDateConverter"></bean>
+    </property>
+    </bean>
 
     <!--不拦截静态资源-->
     <mvc:default-servlet-handler/>

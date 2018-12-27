@@ -18,9 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class TestController {
 
-    @RequestMapping("/test")
+    @RequestMapping(value = "/test",produces = "application/json;charset=utf-8")
     @ResponseBody
     public String test(TestDoamin t){
+        System.out.println(t);
         return t.toString();
     }
 
