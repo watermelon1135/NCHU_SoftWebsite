@@ -1,4 +1,4 @@
-package com.nchu.software.Page.entity;
+package com.nchu.software.page.entity;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.nchu.software.Page.entity;
+package com.nchu.software.page.entity;
 
 import lombok.Data;
 
@@ -14,8 +14,8 @@ import lombok.Data;
  **/
 @Data
 public class SecondMenuEntity {
-    int secondeMenuId;
+    int secondMenuId;
     int firstMenuId;
-    String secondeMenuName;
-    String secondeMenuUrl;
+    String secondMenuName;
+    String secondMenuUrl;
 }

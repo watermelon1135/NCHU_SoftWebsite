@@ -10,8 +10,8 @@
     </rule>
 
    <rule>
-       <from>/showContent/([A-Za-z0-9]+).html</from>
-       <to>/showContent?id=$1</to>
+       <from>/xygk/([A-Za-z0-9]+).html</from>
+       <to>/xygk?id=$1</to>
    </rule>
 
    <!-- <rule>

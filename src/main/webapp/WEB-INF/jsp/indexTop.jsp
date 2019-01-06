@@ -19,7 +19,7 @@
     <script src="../../js/homepage.js"></script>
 </head>
 <body>
-!--
+<!--
 作者：2515873961@qq.com
 时间：2018-12-23
 描述：头部开始
@@ -34,7 +34,7 @@
     <div class="row">
         <div class="col-xs-5"
              style="display: inline-block; padding-top: 40px; width: 28.6%; height: 130px;float: left;"><img
-                class="form-inline" src="../../img/home_page_slices/software.png"/></div>
+                class="form-inline" src="/img/home_page_slices/software.png"/></div>
         <div class="col-xs-4" style="display: inline-block; padding-top: 20px; width: 46%; height: 130px;float: left;">
             <img class="form-inline" src="../../img/home_page_slices/yuanxun.gif"/></div>
         <div class="col-xs-3" style="display: inline-block; padding-top: 70px; height: 130px;">
@@ -66,13 +66,12 @@
                 <li class="active"><a href="#" style="text-align: center;"><span>首页</span></a></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>院系概况</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">$</a></li>
-                        <li><a href="#">学院大事记</a></li>
-                        <li><a href="szdw">学院领导</a></li>
-                        <li><a href="#">组织结构</a></li>
-                        <li><a href="#">学院新闻</a></li>
-                        <li><a href="gzzd">学院公告</a></li>
-                        <li><a href="lxfs">文件下载</a></li>
+                        <li><a href="/xygk?firstId=2&firstName=院系概况">学院简介</a></li>
+                        <li><a href="/xygk?firstId=2&firstName=院系概况">学院大事记</a></li>
+                        <li><a href="/xygk?firstId=2&firstName=院系概况">历史沿革</a></li>
+                        <li><a href="/xygk?firstId=2&firstName=院系概况">历任领导</a></li>
+                        <li><a href="/xygk?firstId=2&firstName=院系概况">机构设置</a></li>
+                        <li><a href="/xygk?firstId=2&firstName=院系概况">师资队伍</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>党务院务</span></a>

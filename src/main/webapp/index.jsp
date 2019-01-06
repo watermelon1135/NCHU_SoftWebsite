@@ -19,6 +19,7 @@
 </head>
 <body>
 
+<jsp:include page="WEB-INF/jsp/indexTop.jsp"/>
 <!--
         	作者：2515873961@qq.com
         	时间：2018-12-23
@@ -352,5 +353,6 @@
 		</div>
 	</div>
 </div>
+<jsp:include page="WEB-INF/jsp/indexBottom.jsp"/>
 </body>
 </html>
