@@ -3,8 +3,10 @@ package com.nchu.software.page.mapper;
 import java.util.List;
 
 import com.nchu.software.page.entity.FirstMenuEntity;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface FirstMenuMapper {
 
-	public List<FirstMenuEntity> selectList();
+	 List<FirstMenuEntity> listAll();
 }

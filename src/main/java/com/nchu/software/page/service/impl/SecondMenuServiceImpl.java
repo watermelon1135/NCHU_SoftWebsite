@@ -1,6 +1,5 @@
 package com.nchu.software.page.service.impl;
 
-import com.nchu.software.page.entity.FirstMenuEntity;
 import com.nchu.software.page.entity.SecondMenuEntity;
 import com.nchu.software.page.mapper.SecondMenuMapper;
 import com.nchu.software.page.service.ISecondMenuService;

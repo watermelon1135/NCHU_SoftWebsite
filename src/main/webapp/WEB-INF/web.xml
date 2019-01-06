@@ -28,6 +28,7 @@
 	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		<listener-class>com.nchu.software.page.listener.TopContextListener</listener-class>
 	</listener>
 
 	

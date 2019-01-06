@@ -4,14 +4,19 @@
         "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
 <urlrewrite>
 
+    <!--<rule>
+        <from>/index.jsp</from>
+        <to>/index</to>
+    </rule>
     <rule>
         <from>/index.html</from>
-        <to>/index.jsp</to>
-    </rule>
+        <to>/index</to>
+    </rule>-->
+
 
    <rule>
-       <from>/xygk/([A-Za-z0-9]+).html</from>
-       <to>/xygk?id=$1</to>
+       <from>/xygk/([A-Za-z0-9]+)([0-9]).html</from>
+       <to>/xygk/page</to>
    </rule>
 
    <!-- <rule>

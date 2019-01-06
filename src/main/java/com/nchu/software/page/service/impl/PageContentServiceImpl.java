@@ -23,6 +23,6 @@ public class PageContentServiceImpl implements IPageContextService {
 
     @Override
     public PageContextEntity getContextBySecondId(Integer secondId) {
-        return null;
+       return mapper.getContextBySecondId(secondId);
     }
 }

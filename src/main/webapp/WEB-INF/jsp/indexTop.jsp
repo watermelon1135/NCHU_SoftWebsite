@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 范孝发
@@ -6,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -63,15 +65,34 @@
     <div class="container">
         <div>
             <ul class="nav navbar-nav">
+                <c:forEach items="${menus}" var="menu">
+                    <li class="dropdown"><a href="/${menu.firstMenu.firstMenuUrl}" ><span>${menu.firstMenu.firstMenuName}</span></a>
+                        <c:if test="${not empty menu.list}">
+                            <ul class="dropdown-menu">
+                                <c:forEach items="${menu.list}" var="twoMenu">
+                                    <li><a href="/${twoMenu.secondMenuUrl}">${twoMenu.secondMenuName}</a></li>
+                                </c:forEach>
+                            </ul>
+                        </c:if>
+                    </li>
+                </c:forEach>
+            </ul>
+        </div>
+    </div>
+</nav>
+<%--<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div>
+            <ul class="nav navbar-nav">
                 <li class="active"><a href="#" style="text-align: center;"><span>首页</span></a></li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>院系概况</span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/xygk?firstId=2&firstName=院系概况">学院简介</a></li>
-                        <li><a href="/xygk?firstId=2&firstName=院系概况">学院大事记</a></li>
-                        <li><a href="/xygk?firstId=2&firstName=院系概况">历史沿革</a></li>
-                        <li><a href="/xygk?firstId=2&firstName=院系概况">历任领导</a></li>
-                        <li><a href="/xygk?firstId=2&firstName=院系概况">机构设置</a></li>
-                        <li><a href="/xygk?firstId=2&firstName=院系概况">师资队伍</a></li>
+                        <li><a href="/xygk/2/1">学院简介</a></li>
+                        <li><a href="/xygk/2/2">学院大事记</a></li>
+                        <li><a href="/xygk/2/3">历史沿革</a></li>
+                        <li><a href="/xygk/2/4">历任领导</a></li>
+                        <li><a href="/xygk/2/5">机构设置</a></li>
+                        <li><a href="/xygk/2/6">师资队伍</a></li>
                     </ul>
                 </li>
                 <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>党务院务</span></a>
@@ -119,7 +140,7 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav>--%>
 <!--
     作者：2515873961@qq.com
     时间：2018-12-23

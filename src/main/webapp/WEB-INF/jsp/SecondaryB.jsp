@@ -44,9 +44,9 @@
                     <ul>
                         <c:forEach items="heads" var="head">
                         <li><a href="${head.url}" target="_blank" title=" ${head.title}"> ${head.title}</a><img
-                                src="../../img/qipao.png"/><span>${head.upLoadTime}</span></li>
+                                src="../../img/qipao.png"/><span>${head.uploadTime}</span></li>
 
-                        <li><a href="${head.url}" target="_blank" title=" ${head.title}"> ${head.title}</a><span>${head.upLoadTime}</span>
+                        <li><a href="${head.url}" target="_blank" title=" ${head.title}"> ${head.title}</a><span>${head.uploadTime}</span>
                         </li>
                         </c:forEach>
 

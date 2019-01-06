@@ -5,15 +5,22 @@
 <mapper namespace="com.nchu.software.page.mapper.PageContextMapper">
 
     <resultMap id="BaseMap" type="com.nchu.software.page.entity.PageContextEntity">
-        <id property="pagecontextid" column="pagecontextid" jdbcType="INTEGER"/>
-        <result property="author" column="author" jdbcType="VARCHAR"/>
-        <result property="content" column="content" jdbcType="VARCHAR"/>
-        <result property="uploadtime" column="uploadtime" jdbcType="VARCHAR"/>
-        <result property="verify" column="verify" jdbcType="INTEGER"/>
-        <result property="publish" column="publish" jdbcType="INTEGER"/>
-        <result property="status" column="status" jdbcType="INTEGER"/>
+        <id property="pageContextId" column="pagecontextid"/>
+        <result property="secondMenuId" column="secondmenuid"/>
+        <result property="title" column="title"/>
+        <result property="author" column="author"/>
+        <result property="context" column="content"/>
+        <result property="source" column="source"/>
+        <result property="uploadTime" column="uploadTime"/>
+        <result property="count" column="count"/>
+        <result property="status" column="status"/>
     </resultMap>
 
+    <sql id="pagecontext">pagecontextid,secondmenuid,title,author,context,source,uploadtime,count,status</sql>
+
+    <select id="getContextBySecondId" resultMap="BaseMap">
+        select <include refid="pagecontext"/> from page_context where secondmenuid=#{secondId}
+    </select>
 
 
 </mapper>

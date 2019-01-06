@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%--
   Created by IntelliJ IDEA.
   User: 范孝发
@@ -17,6 +18,20 @@
     <script src="../../js/jquery-3.3.1.min.js"></script>
     <script src="../../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="../../js/homepage.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var strs = window.location.toString();
+            strs = strs.split("/");
+            strs=strs[strs.length-1];
+            //alert(strs);
+            $(".catlog li").eq(parseInt(strs)-1).addClass("twoMenus").siblings().removeClass("twoMenus");
+        })
+    </script>
+    <style type="text/css">
+        .twoMenus{
+            background-color: #ddffff;
+        }
+    </style>
 </head>
 <body>
 <jsp:include page="/WEB-INF/jsp/indexTop.jsp"/>
@@ -27,10 +42,8 @@
                 <div class="catlog-selected"><span style="line-height: 55px;height: 55px;">
                     ${firstMenu}</span></div>
                 <ul class="catlog">
-
                 <c:forEach items="${twoMenus}" var="twoMenu">
-
-                    <li><a href="${twoMenu.secondMenuUrl}" title="${twoMenu.secondMenuName}">${twoMenu.secondMenuName}</a></li>
+                    <li><a href="/${twoMenu.secondMenuUrl}" title="${twoMenu.secondMenuName}">${twoMenu.secondMenuName}</a></li>
                 </c:forEach>
                 </ul>
             </div>
@@ -39,7 +52,8 @@
                     <span>${two.secondMenuName}</span>
                 </div>
                 <div class="nr-content">
-
+                    <fmt:formatDate value="${pagecontext.uploadTime}" pattern="MM月dd日" />
+                    ${pagecontext.context}
                 </div>
             </div>
         </div>
