@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nchu.software.page.mapper.PageContextMapper">
+
+    <resultMap id="BaseMap" type="com.nchu.software.page.entity.PageContextEntity">
+        <id property="pagecontextid" column="pagecontextid" jdbcType="INTEGER"/>
+        <result property="author" column="author" jdbcType="VARCHAR"/>
+        <result property="content" column="content" jdbcType="VARCHAR"/>
+        <result property="uploadtime" column="uploadtime" jdbcType="VARCHAR"/>
+        <result property="verify" column="verify" jdbcType="INTEGER"/>
+        <result property="publish" column="publish" jdbcType="INTEGER"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+
+
+</mapper>

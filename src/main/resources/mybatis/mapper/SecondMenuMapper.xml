@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="com.nchu.software.page.mapper.SecondMenuMapper">
+
+	<!--<cache />-->
+	<resultMap id="BaseMap" type="com.nchu.software.page.entity.SecondMenuEntity">
+		<id property="secondMenuId" column="secondmenuid" />
+		<result property="firstMenuId" column="firstmenuid" />
+		<result property="secondMenuName" column="secondmenuname"/>
+		<result property="secondMenuUrl" column="secondmenuurl"/>
+	</resultMap>
+
+	<sql id="secondmenu">secondmenuid,firstmenuid,secondmenuname,secondmenuurl</sql>
+
+	<!-- 通过一级菜单找到相应的二级菜单 -->
+	<select id="getSecondMenuByFirstId" resultMap="BaseMap">
+		select <include refid="secondmenu"></include>
+			from twolevel_menu where firstmenuid = #{firstmenuid}
+	</select>
+
+	<select id="getFirstMenuName" resultType="string">
+		select firstmenuname
+		from firstlevel_menu where firstlevel_menu.firstmenuid = #{firstmenuid}
+
+	</select>
+
+	<!-- 查询所有的二级菜单 -->
+	<!--<select id="findList" resultType="secondMenuEntity">
+		select <include refid="secondmenu"></include> from twolevel_menu
+	</select>-->
+	
+	<!--<select id="findSecondMenuBySecId" resultType="secondMenuEntity">
+		select <include refid="secondmenu"></include>
+		from twolevel_menu where firstmenuid in
+		(select firstmenuid from twolevel_menu where secondmenuid = #{secondmenuid})
+	</select>
+	
+	<select id="getSecondMenu" resultType="secondMenuEntity">
+		select <include refid="secondmenu" /> from twolevel_menu where firstmenuid is null
+	</select>-->
+</mapper>
