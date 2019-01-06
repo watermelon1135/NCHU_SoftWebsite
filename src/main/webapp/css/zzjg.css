@@ -1,0 +1,8 @@
+.nr-content table {
+	margin-top: 10px;	
+}
+.nr-content table thead{
+	border: none;
+	font-size: 14px;
+	text-align: center;
+}

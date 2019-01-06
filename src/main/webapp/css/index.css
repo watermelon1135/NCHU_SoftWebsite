@@ -1,0 +1,129 @@
+.container .row .panel{
+	width: 31%;
+	height: 411px;
+	border: none;
+	background:none;
+}
+.container .row .panel .panel-heading{
+	height: 42px;
+	color: #0f1010;
+	font-size: 18px;
+	padding: 0;
+	border: none;
+	background:none;
+	box-shadow: none;
+}
+.container .row .panel .panel-heading a{
+	color: #293782;
+	font-size: 16px;
+	float: right;
+}
+.container .row .panel .panel-body{
+	padding: 10px 0px 0px 0px;
+}
+.container .row .panel .panel-body .news{
+	padding-top: 10px;
+}
+.container .row .panel .panel-body .news-list a{
+	width: 70%;
+	font-size: 14px;
+	display: inline-block;
+	overflow: hidden;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-decoration: none;
+	color: #050505;
+}
+.container .row .panel .panel-body .news-list a:hover{
+	color: #293782;
+}
+.container .row .panel .panel-body .news-list span{
+	width: 12%;
+	float: right;
+	font-size: 14px;
+}
+.container .row .panel .panel-body .news-list li{
+	margin-top: 8px;
+}
+.disan{
+	width: 32.5%;
+	height: 411px;
+	padding-top: 43px;
+	margin-bottom: 20px;
+}
+.disan span{
+	font-size: 14px;
+	color: #FFFFFF;
+	margin-left: 26px;
+}
+.disan form{
+	width: 100%;
+	height: 180px;
+	background: #055FA5;
+}
+.disan .form-group{
+	width: 100%;
+	margin-left: 54px;
+	margin-top: 10px;
+}
+.form-group label{
+	float: left;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-weight: lighter;
+}
+.disan .form-group .form-control{
+	float: left;
+	width: 50%;
+	background: none;
+	border: 1px solid #FFFFFF;
+	border-radius: 24px;
+}
+.disan .form-horizontal .s{
+	width: 100%;
+	text-align: center;
+}
+.disan .form-horizontal .btn-default{
+	border-radius: 24px;
+}
+.disan .letter{
+	height: 151px;
+	width: 100%;
+}
+.disan .letter .lett{
+	float: right;
+	width: 49%;
+	height: 150px;
+}
+.disan .letter .xinxiang a{
+	padding: 60px 20px 0px 0px;
+}
+.disan .letter .xinxiang .lett{
+	width: 157%;
+	height: 69px;
+	background-color: #293782;
+	text-align: center;
+	display: table-cell;
+	vertical-align: center;
+}
+.listone{
+	width: 20%;
+	height: 70px;
+	float: left;
+	border: 1px solid #474848;
+}
+.listone .one{
+	width: 200px;
+	height: 50px;
+	padding-top: 17px;
+	padding-left: 58px;
+	text-align: center;
+}
+.listone .one a{
+	text-decoration: none;
+}
+.listone span{
+	color:  #181B1C ;
+	font-size: 22px;
+}

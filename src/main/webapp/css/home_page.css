@@ -1,0 +1,124 @@
+/*清除浏览器默认样式*/
+*{
+	margin: 0;
+	padding: 0;
+	border: #000000;
+	list-style: none;	
+}
+/*全局控制*/
+body{
+	font-family: "微软雅黑",arial,sans-serif,helvetica;
+	font-size: 12px;
+	background: #f8f8f8;
+}
+/*鼠标移上时的样式*/
+a:hover{
+	color: #293782;
+}
+
+.container{
+	width: 1170px !important;
+	max-width: none !important;
+}
+.top{
+	background: #293782;
+	font-size: 12px;
+	line-height: 30px;
+	color: #FFFFFF;
+}
+.container .row{
+	padding-bottom: 50px;
+}
+.container form{
+	position: relative;
+}
+.container .navbar-form input[type="text"]{
+	background: #FFFFFF;
+	border: 1px solid rgba(41,55,130,0.5);
+	font-size: 14px;
+	width: 90%;
+	height: 40px;
+	color: #EBEBEB;
+}
+.container .navbar-form button[type="submit"]{
+	position: absolute;
+	width: 30%;
+	height: 40px;
+	right: -11%;
+	background: #293782;
+	border: none;
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: normal;		
+}
+.navbar-default .nav{
+	font-size: 18px;
+	width: 100%;
+} 
+.navbar-default .nav .active{
+	width: 11%;	
+}
+.navbar-default .nav .active a{
+	background-color: #293782;
+	color: #ffffff;
+}
+.navbar-default .nav .active a:hover{
+	background: #293782;
+	color: #FFFFFF;
+}
+.navbar-default .nav .dropdown{
+	width: 11%;	
+}
+.navbar-default .nav .dropdown:hover{
+	background-color: #293782;
+}
+.navbar-default .nav .dropdown a{
+	text-align: center;
+}
+.navbar-default .nav .dropdown a:hover{
+	color: #ffffff;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; // remove the gap so it doesn't close
+}
+.dropdown-menu li a{
+	padding-top: 6px;
+	font-size: 16px;
+}
+.dropdown-menu li a:hover{
+	color: #FFFFFF;
+	background-color: #293782;
+}
+#demo .carousel .carousel-inner{
+	position: relative;
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+.footer{
+	width: 100%;
+	height: 150px;
+	background-color: #293782;
+}
+.footer .fo{
+	padding-top: 24px;
+	float: left;
+}
+.footer .ft{
+	width: 28%;
+	height: 136px;
+	padding-top: 20px;
+	padding-left: 219px;
+	float: left;
+}
+.footer .fs{
+	width: 15%;
+	height: 100px;
+	padding-top: 38px;
+	float: right;
+}
+.fs span{
+	color: #FFFFFF;
+	font-size: 16px;
+}
