@@ -14,5 +14,8 @@ import java.util.List;
  **/
 public interface TestMapper {
 
+    /**
+     * @return 所有的实体类
+     */
     List<TestDoamin> listAll();
 }

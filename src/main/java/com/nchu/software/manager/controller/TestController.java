@@ -2,8 +2,12 @@ package com.nchu.software.manager.controller;
 
 import com.nchu.software.manager.domain.TestDoamin;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Date;
 
 /**
  * @ClassName test
@@ -25,4 +29,13 @@ public class TestController {
         return t.toString();
     }
 
+    @RequestMapping("/testpojo")
+    public String test1(Model model, @ModelAttribute("ss") TestDoamin aa){
+        //aa.setId(1);
+        //aa.setDate(new Date());
+        System.out.println(aa.getName());
+
+      //  model.addAttribute("aa",aa);
+        return "test/pojo";
+    }
 }

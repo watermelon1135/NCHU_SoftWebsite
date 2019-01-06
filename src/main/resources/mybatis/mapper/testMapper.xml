@@ -10,7 +10,7 @@
         <result property="date" column="date"/>
     </resultMap>
 
-    <select id="getByid" resultMap="baseMap">
+    <select id="getById" resultMap="baseMap">
         select id,name,date from test where id = #{id};
     </select>
 
