@@ -28,4 +28,9 @@ public class FirstMenuServiceImpl implements IFirstMenuService {
     public List<FirstMenuEntity> listAll() {
         return mapper.listAll();
     }
+
+    @Override
+    public FirstMenuEntity getFirstMenuByName(String name) {
+        return mapper.getFirstMenuByName(name);
+    }
 }

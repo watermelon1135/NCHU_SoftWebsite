@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.nchu.software.page.mapper.PageContextMapper">
+<mapper namespace="com.nchu.software.page.mapper.PageContentMapper">
 
-    <resultMap id="BaseMap" type="com.nchu.software.page.entity.PageContextEntity">
+    <resultMap id="BaseMap" type="com.nchu.software.page.entity.PageContentEntity">
         <id property="pageContextId" column="pagecontextid"/>
         <result property="secondMenuId" column="secondmenuid"/>
         <result property="title" column="title"/>

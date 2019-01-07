@@ -1,24 +1,20 @@
 package com.nchu.software.page.controller;
 
-import com.nchu.software.page.entity.FirstMenuEntity;
-import com.nchu.software.page.entity.PageContextEntity;
+import com.nchu.software.page.entity.PageContentEntity;
 import com.nchu.software.page.entity.SecondMenuEntity;
-import com.nchu.software.page.service.IPageContextService;
+import com.nchu.software.page.service.IPageContentService;
 import com.nchu.software.page.service.ISecondMenuService;
-import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.jws.soap.SOAPBinding;
-import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
  * @ClassName SecondMenuController
- * @Description: java类作用描述
+ * @Description: 处理二级页面的请求
  * @Author: watermelon
  * @CreateDate: 2019/1/6 10:54
  * @UpdateUser: watermelon
@@ -33,13 +29,24 @@ public class SecondMenuController {
     ISecondMenuService service;
 
     @Autowired
-    IPageContextService pageService;
+    IPageContentService pageService;
 
 
+    /**
+     * 使用Restful风格 传参
+     * 通过一级菜单Id和二级菜单
+     * @author watermelon
+     * @param firstId
+     * @param secondId
+     * @param mv
+     * @return org.springframework.web.servlet.ModelAndView
+     * @exception
+     * @date  2019/1/6 22:04
+    */
     @RequestMapping("/xygk/{firstId}/{secondId}")
     public ModelAndView show(@PathVariable Integer firstId,@PathVariable Integer secondId, ModelAndView mv){
         List<SecondMenuEntity> sms = service.getSecondMenuByFirstId(firstId);
-        PageContextEntity pagecontext = pageService.getContextBySecondId(secondId);
+        PageContentEntity pagecontext = pageService.getContextBySecondId(secondId);
 
         String firstMenuName = service.getFirstMenuName(firstId);
         mv.addObject("twoMenus",sms);

@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<jsp:include page="WEB-INF/jsp/indexTop.jsp"/>
+<jsp:include page="indexTop.jsp"/>
 <!--
         	作者：2515873961@qq.com
         	时间：2018-12-23
@@ -38,13 +38,13 @@
         <!--轮播图片-->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="img/home_page_slices/1.jpg" style="text-align: center;"/>
+                <img src="../../img/home_page_slices/1.jpg" style="text-align: center;"/>
             </div>
             <div class="item">
-                <img src="img/home_page_slices/2.jpg"/>
+                <img src="../../img/home_page_slices/2.jpg"/>
             </div>
             <div class="item">
-                <img src="img/home_page_slices/3.png"/>
+                <img src="../../img/home_page_slices/3.png"/>
             </div>
         </div>
         <!--左右切换按钮-->
@@ -81,15 +81,15 @@
                                    <div class="carousel-caption" style="padding-bottom: 0px;">标题1</div>
                                </div>
                                <div class="item" style="height: 200px; width: 100%;">
-                                   <img src="img/home_page_slices/xinwen.png" alt="second slid"/>
+                                   <img src="img/home_page_slices/mmexport1463302710255.jpg" alt="second slid"/>
                                    <div class="carousel-caption" style="padding-bottom: 0px;">标题2</div>
                                </div>
                                <div class="item" style="height: 200px; width: 100%;">
-                                   <img src="img/home_page_slices/xinwen.png" alt="third slid"/>
+                                   <img src="img/home_page_slices/mmexport1463302547647.jpg" alt="third slid"/>
                                    <div class="carousel-caption" style="padding-bottom: 0px;">标题3</div>
                                </div>
                                <div class="item" style="height: 200px; width: 100%;">
-                                   <img src="img/home_page_slices/xinwen.png" alt="third slid"/>
+                                   <img src="img/home_page_slices/mmexport1463302567194.jpg" alt="third slid"/>
                                    <div class="carousel-caption" style="padding-bottom: 0px;">标题4</div>
                                </div>
                            </div>
@@ -313,7 +313,7 @@
     </div>
 </div>
 
-<jsp:include page="WEB-INF/jsp/indexBottom.jsp"/>
+<jsp:include page="indexBottom.jsp"/>
 
 </body>
 </html>

@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Data
-public class PageContextEntity implements Serializable{
+public class PageContentEntity implements Serializable{
 
 	private Long pageContextId;
 	private Long secondMenuId;

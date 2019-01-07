@@ -8,5 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FirstMenuMapper {
 
-	 List<FirstMenuEntity> listAll();
+	List<FirstMenuEntity> listAll();
+
+	FirstMenuEntity getFirstMenuByName(String name);
 }

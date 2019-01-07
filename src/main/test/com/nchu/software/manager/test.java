@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @ClassName test
  * @Description: java类作用描述
@@ -22,18 +25,24 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration("classpath:spring/spring-context.xml")
 public class test {
 
-    @Autowired
-    TestMapper mapper;
+    //@Autowired
+    //TestMapper mapper;
 
-    @Test
-    public void test (){
-        System.out.println(mapper.listAll());
-    }
+    //@Test
+    //public void test (){
+      //  System.out.println(mapper.listAll());
+    //}
 
 
     @Test
     public void loggerTest(){
-        Logger logger  = Logger.getLogger(test.class);
-        logger.debug("这是测试用的");
+        int a=0;
+        List<String> list = new ArrayList<>();
+        list.add("aa");
+        list.add("bb");
+        list.add("cc");
+        list.add("dd");
+        a++;
+        System.out.println(a+".............");
     }
 }

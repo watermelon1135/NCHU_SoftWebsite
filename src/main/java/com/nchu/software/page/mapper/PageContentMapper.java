@@ -1,7 +1,7 @@
 package com.nchu.software.page.mapper;
 
 
-import com.nchu.software.page.entity.PageContextEntity;
+import com.nchu.software.page.entity.PageContentEntity;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * @date 18-4-30上午9:50
  */
 @Repository
-public interface PageContextMapper {
-    PageContextEntity getContextBySecondId(int secondId);
+public interface PageContentMapper {
+    PageContentEntity getContextBySecondId(int secondId);
 
 }

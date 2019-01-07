@@ -90,6 +90,10 @@ a:hover{
 	color: #FFFFFF;
 	background-color: #293782;
 }
+.disan .form-control::placeholder{
+	color: #FFFFFF;
+}
+
 #demo .carousel .carousel-inner{
 	position: relative;
 	width: 100%;

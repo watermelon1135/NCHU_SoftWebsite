@@ -1,8 +1,8 @@
 package com.nchu.software.page.service.impl;
 
-import com.nchu.software.page.entity.PageContextEntity;
-import com.nchu.software.page.mapper.PageContextMapper;
-import com.nchu.software.page.service.IPageContextService;
+import com.nchu.software.page.entity.PageContentEntity;
+import com.nchu.software.page.mapper.PageContentMapper;
+import com.nchu.software.page.service.IPageContentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +17,12 @@ import org.springframework.stereotype.Service;
  * @Version: 1.0
  **/
 @Service
-public class PageContentServiceImpl implements IPageContextService {
+public class PageContentServiceImpl implements IPageContentService {
     @Autowired
-    PageContextMapper mapper;
+    PageContentMapper mapper;
 
     @Override
-    public PageContextEntity getContextBySecondId(Integer secondId) {
+    public PageContentEntity getContextBySecondId(Integer secondId) {
        return mapper.getContextBySecondId(secondId);
     }
 }

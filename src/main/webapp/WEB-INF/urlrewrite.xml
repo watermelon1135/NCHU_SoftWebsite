@@ -5,7 +5,7 @@
 <urlrewrite>
 
     <!--<rule>
-        <from>/index.jsp</from>
+        <from>/index1.jsp</from>
         <to>/index</to>
     </rule>
     <rule>

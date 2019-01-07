@@ -15,4 +15,5 @@ import java.util.List;
 
 public interface IFirstMenuService {
     List<FirstMenuEntity> listAll();
+    FirstMenuEntity getFirstMenuByName(String secondName);
 }

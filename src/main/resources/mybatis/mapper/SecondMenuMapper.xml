@@ -25,6 +25,11 @@
 
 	</select>
 
+
+	<select id="getSecondMenuByName" parameterType="String" resultMap="BaseMap">
+        select secondmenuid,secondmenuname,secondmenuurl from twolevel_menu where secondmenuname = #{secondMenuName};
+    </select>
+
 	<!-- 查询所有的二级菜单 -->
 	<!--<select id="findList" resultType="secondMenuEntity">
 		select <include refid="secondmenu"></include> from twolevel_menu

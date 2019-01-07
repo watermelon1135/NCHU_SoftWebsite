@@ -19,4 +19,6 @@ public interface SecondMenuMapper {
     List<SecondMenuEntity> getSecondMenuByFirstId(Integer firstmenuid);
 
     String getFirstMenuName(Integer secondId);
+
+    SecondMenuEntity getSecondMenuByName(String name);
 }

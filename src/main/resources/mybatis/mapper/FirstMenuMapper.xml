@@ -13,5 +13,9 @@
 	<select id="listAll" resultMap="FirstMneuMap">
 		select firstmenuid,firstmenuname,firstmenuurl from FirstLevel_Menu
 	</select>
-	
+
+	<select id="getFirstMenuByName" resultMap="FirstMneuMap" parameterType="string">
+		select firstmenuid,firstmenuname,firstmenuurl from FirstLevel_Menu where firstmenuname = #{firstmenuname}
+	</select>
+
 </mapper>

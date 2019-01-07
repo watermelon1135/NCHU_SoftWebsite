@@ -18,4 +18,5 @@ import java.util.List;
 public interface ISecondMenuService {
     List<SecondMenuEntity> getSecondMenuByFirstId(Integer firstmenuid);
     String getFirstMenuName(Integer secondId);
+    SecondMenuEntity getSecondMenuByName(String name);
 }
