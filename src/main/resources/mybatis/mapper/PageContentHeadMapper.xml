@@ -4,7 +4,7 @@
 <mapper namespace="com.nchu.software.page.mapper.PageContentHeadMapper">
 
 
-    <select id="queryNew" parameterType="int" resultType="com.nchu.software.page.entity.PageContentHead">
+    <select id="listPageContentHeadBySecondId"  resultType="com.nchu.software.page.entity.PageContentHead">
         select pagecontextid,title,uploadtime,pagecontexturl from page_context
         where secondmenuid =#{secondMenuId} order by uploadtime desc limit #{number};
     </select>

@@ -66,11 +66,11 @@
         <div>
             <ul class="nav navbar-nav">
                 <c:forEach items="${menus}" var="menu">
-                    <li class="dropdown"><a href="/${menu.firstMenu.firstMenuUrl}" ><span>${menu.firstMenu.firstMenuName}</span></a>
+                    <li class="dropdown"><a href="/${menu.firstMenu.firstMenuUrl}" onclick=""><span>${menu.firstMenu.firstMenuName}</span></a>
                         <c:if test="${not empty menu.list}">
                             <ul class="dropdown-menu">
                                 <c:forEach items="${menu.list}" var="twoMenu">
-                                    <li><a href="/${twoMenu.secondMenuUrl}">${twoMenu.secondMenuName}</a></li>
+                                    <li><a href="/${twoMenu.secondMenuUrl}.html">${twoMenu.secondMenuName}</a></li>
                                 </c:forEach>
                             </ul>
                         </c:if>
@@ -80,67 +80,17 @@
         </div>
     </div>
 </nav>
-<%--<nav class="navbar navbar-default" role="navigation">
-    <div class="container">
-        <div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#" style="text-align: center;"><span>首页</span></a></li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>院系概况</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/xygk/2/1">学院简介</a></li>
-                        <li><a href="/xygk/2/2">学院大事记</a></li>
-                        <li><a href="/xygk/2/3">历史沿革</a></li>
-                        <li><a href="/xygk/2/4">历任领导</a></li>
-                        <li><a href="/xygk/2/5">机构设置</a></li>
-                        <li><a href="/xygk/2/6">师资队伍</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>党务院务</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">公告公示</a></li>
-                        <li><a href="">会议纪要</a></li>
-                        <li><a href="">学院发文</a></li>
-                        <li><a href="">理论学习</a></li>
-                        <li><a href="">平安校园</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>人才培养</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">研究生教育</a></li>
-                        <li><a href="">本科生教育</a></li>
-                        <li><a href="">继续教育</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>科学研究</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">学术动态</a></li>
-                        <li><a href="">科研成果</a></li>
-                        <li><a href="">创新团队</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>党群工作</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">学工简介</a></li>
-                        <li><a href="">学工动态</a></li>
-                        <li><a href="">评优评先</a></li>
-                        <li><a href="">规章制度</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>招生就业</span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="">本科生招生</a></li>
-                        <li><a href="">硕士生招生</a></li>
-                        <li><a href="">本科生就业信息</a></li>
-                        <li><a href="">硕士生就业信息</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>荣誉墙</span></a>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span>建议信箱</span></a>
-            </ul>
-            </ul>
-        </div>
-    </div>
-</nav>--%>
+<script type="text/javascript">
+    function jump(name) {
+        var jump = name.href.toString();
+        //alert(jump)
+        if (jump.lastIndexOf("/index") == -1)
+            return false;
+        return true;
+    }
+</script>
+
+
 <!--
     作者：2515873961@qq.com
     时间：2018-12-23

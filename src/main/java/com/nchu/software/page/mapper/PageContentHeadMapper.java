@@ -15,7 +15,14 @@ import java.util.ArrayList;
  */
 @Repository
 public interface PageContentHeadMapper {
-
-    public ArrayList<PageContentHead> queryNew(@Param("secondMenuId") Integer secondMenuId, @Param("number") Integer number);
+     /**
+      * @Description 根据二级菜单id查询所有页面表头信息
+      * @author  watermelon
+      * @param secondMenuId
+      * @return  ArrayList<PageContentHead>
+      * @exception
+      * @date   2019/1/7 22:54
+      */
+     ArrayList<PageContentHead> listPageContentHeadBySecondId(@Param("secondMenuId") Long secondMenuId, @Param("number") Integer number);
 
 }

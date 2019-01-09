@@ -14,8 +14,14 @@ import lombok.Data;
  **/
 @Data
 public class SecondMenuEntity {
-    int secondMenuId;
-    int firstMenuId;
+    /**
+     * secondMenuId:二级菜单编号
+     * firstMenuId:一级菜单编号
+     * secondMenuName:二级菜单名称
+     * secondMenuUrl:二级菜单URL
+     */
+    Long secondMenuId;
+    Long firstMenuId;
     String secondMenuName;
     String secondMenuUrl;
 }

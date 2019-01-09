@@ -5,19 +5,19 @@
 <urlrewrite>
 
     <!--<rule>
-        <from>/index1.jsp</from>
+        <from>/index.jsp</from>
         <to>/index</to>
-    </rule>
-    <rule>
+    </rule>-->
+    <!--<rule>
         <from>/index.html</from>
         <to>/index</to>
     </rule>-->
 
 
-   <rule>
-       <from>/xygk/([A-Za-z0-9]+)([0-9]).html</from>
-       <to>/xygk/page</to>
-   </rule>
+   <!--<rule>
+       <from>/xygk/([0-9]+)/([0-9]+).html</from>
+       <to>/xygk/$1/$2</to>
+   </rule>-->
 
    <!-- <rule>
         <note>forward(转发模式)传参</note>

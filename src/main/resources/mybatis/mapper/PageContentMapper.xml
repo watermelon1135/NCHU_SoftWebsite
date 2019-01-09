@@ -14,13 +14,22 @@
         <result property="uploadTime" column="uploadTime"/>
         <result property="count" column="count"/>
         <result property="status" column="status"/>
+        <result property="pageContextUrl" column="pagecontexturl"/>
     </resultMap>
 
-    <sql id="pagecontext">pagecontextid,secondmenuid,title,author,context,source,uploadtime,count,status</sql>
+    <sql id="pagecontext">pagecontextid,secondmenuid,title,author,context,source,uploadtime,count,status,pagecontexturl</sql>
 
     <select id="getContextBySecondId" resultMap="BaseMap">
         select <include refid="pagecontext"/> from page_context where secondmenuid=#{secondId}
     </select>
 
+    <select id="listContextsBySecondId" resultMap="BaseMap">
+        select <include refid="pagecontext"/> from page_context where secondmenuid=#{secondId}
+    </select>
+
+    <!--根据pageid获取页面-->
+    <select id="getPageByPageContextId" resultMap="BaseMap">
+        SELECT <include refid="pagecontext"/> FROM  page_context WHERE  pagecontextid=#{pageContextId}
+    </select>
 
 </mapper>

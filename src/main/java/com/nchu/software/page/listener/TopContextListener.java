@@ -1,21 +1,13 @@
 package com.nchu.software.page.listener;
 
-import com.nchu.software.page.entity.FirstMenuEntity;
-import com.nchu.software.page.entity.Menu;
-import com.nchu.software.page.entity.SecondMenuEntity;
 import com.nchu.software.page.mapper.FirstMenuMapper;
 import com.nchu.software.page.mapper.SecondMenuMapper;
-import org.springframework.ui.Model;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import javax.servlet.Servlet;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @ClassName TopContextListener
@@ -38,14 +30,14 @@ public class TopContextListener implements ServletContextListener {
 
     }
 
-    public void InitIndexTop(ServletContext sc){
+    public void InitIndexTop(ServletContext sc) {
         WebApplicationContext context = WebApplicationContextUtils.getWebApplicationContext(sc);
 
         //利用工具类找到该bean对象
         FirstMenuMapper firstMenuMapper = context.getBean(FirstMenuMapper.class);
         SecondMenuMapper secondMenuMapper = context.getBean(SecondMenuMapper.class);
-       // List<VipRankEntity> ranks = dao.selectAll();
-        List<FirstMenuEntity> firstMenus = firstMenuMapper.listAll();
+        // List<VipRankEntity> ranks = dao.selectAll();
+       /* List<FirstMenuEntity> firstMenus = firstMenuMapper.listAll();
         List<Menu> menus = new ArrayList<>();
         for(int i = 0;i < firstMenus.size();i ++){
             List<SecondMenuEntity> twoMenu = secondMenuMapper.getSecondMenuByFirstId(firstMenus.get(i).getFirstMenuId());
@@ -57,5 +49,6 @@ public class TopContextListener implements ServletContextListener {
             menus.add(menu);
         }
         sc.setAttribute("menus",menus);
+    }*/
     }
 }

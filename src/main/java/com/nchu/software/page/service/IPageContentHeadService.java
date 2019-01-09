@@ -3,7 +3,7 @@ package com.nchu.software.page.service;
 
 import com.nchu.software.page.entity.PageContentHead;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @ClassName HeadService
@@ -14,6 +14,15 @@ import java.util.ArrayList;
  */
 public interface IPageContentHeadService {
 
-    public ArrayList<PageContentHead> queryNew(Integer secondMenuId, Integer number);
+     /**
+      * @Description //根据二级菜单id和要查询的数量查出相应的页面表头信息
+      * @author  watermelon
+      * @param secondMenuId
+      * @param number
+      * @return
+      * @exception
+      * @date   2019/1/7 22:54
+     */
+     List<PageContentHead> listPageContentHeadBySecondId(Long secondMenuId, Integer number);
 
 }

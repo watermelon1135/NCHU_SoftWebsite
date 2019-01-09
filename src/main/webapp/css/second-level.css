@@ -5,8 +5,10 @@ body{
 }
 .main{
 	width: 100%;
-	background: url(../img/xyjj_slices/background.png);
-	background-position: center 0;
+	background: url(../img/xyjj_slices/background.png) no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center center;
 }
 .list-left{
 	float: left;

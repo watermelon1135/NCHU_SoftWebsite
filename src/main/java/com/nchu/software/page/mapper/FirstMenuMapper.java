@@ -1,14 +1,38 @@
 package com.nchu.software.page.mapper;
 
-import java.util.List;
-
 import com.nchu.software.page.entity.FirstMenuEntity;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+/**
+    * @Description:    java类作用描述
+    * @Author:         watermelon
+    * @CreateDate:     2019/1/8 8:21
+    * @UpdateUser:     watermelon
+    * @UpdateDate:     2019/1/8 8:21
+    * @UpdateRemark:   修改内容
+    * @Version:        1.0
+*/
 @Repository
 public interface FirstMenuMapper {
-
+	/**
+	 * @Description 查询所有一级菜单信息
+	 * @author  watermelon
+	 * @param null
+	 * @return  List<FirstMenuEntity>
+	 * @exception
+	 * @date   2019/1/7 22:54
+	 */
 	List<FirstMenuEntity> listAll();
 
+	/**
+	 * @Description 根据一级菜单名称查询一级菜单信息
+	 * @author  watermelon
+	 * @param name
+	 * @return  FirstMenuEntity
+	 * @exception
+	 * @date   2019/1/7 22:54
+	 */
 	FirstMenuEntity getFirstMenuByName(String name);
 }

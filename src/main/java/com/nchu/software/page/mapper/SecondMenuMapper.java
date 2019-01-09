@@ -1,6 +1,5 @@
 package com.nchu.software.page.mapper;
 
-import com.nchu.software.page.entity.FirstMenuEntity;
 import com.nchu.software.page.entity.SecondMenuEntity;
 import org.springframework.stereotype.Repository;
 
@@ -15,10 +14,43 @@ import java.util.List;
  **/
 @Repository
 public interface SecondMenuMapper {
+    /**
+     * @Description 根据一级菜单id查询所有二级菜单信息
+     * @author  watermelon
+     * @param firstmenuid
+     * @return    List<SecondMenuEntity>
+     * @exception
+     * @date   2019/1/7 22:54
+     */
+    List<SecondMenuEntity> getSecondMenuByFirstId(Long firstmenuid);
 
-    List<SecondMenuEntity> getSecondMenuByFirstId(Integer firstmenuid);
+    /**
+     * @Description 根据二级菜单id查询一级菜单名称
+     * @author  watermelon
+     * @param secondId
+     * @return     String
+     * @exception
+     * @date   2019/1/7 22:54
+     */
+    String getFirstMenuName(Long secondId);
 
-    String getFirstMenuName(Integer secondId);
-
+    /**
+     * @Description 根据二级菜单名称查询二级菜单信息
+     * @author  watermelon
+     * @param name
+     * @return   SecondMenuEntity
+     * @exception
+     * @date   2019/1/7 22:54
+     */
     SecondMenuEntity getSecondMenuByName(String name);
+
+    /**
+     * @Description 根据二级菜单id拆线呢二级菜单信息
+     * @author  watermelon
+     * @param id
+     * @return   SecondMenuEntity
+     * @exception
+     * @date   2019/1/7 22:54
+     */
+    SecondMenuEntity getSecondMenuBySecondId(Long id);
 }

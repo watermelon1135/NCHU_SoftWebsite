@@ -48,10 +48,10 @@
             </div>
         </div>
         <!--左右切换按钮-->
-        <a href="#demo" class="left carousel-control" data-slide="prev" style="height: 100%;">
+        <a href="#demo" role="button" class="left carousel-control" data-slide="prev" style="height: 100%;">
             <span class="glyphicon glyphicon-chevron-left"></span>
         </a>
-        <a href="#demo" class="right carousel-control" data-slide="next" style="height: 100%;">
+        <a href="#demo" role="button" class="right carousel-control" data-slide="next" style="height: 100%;">
             <span class="glyphicon glyphicon-chevron-right"></span>
         </a>
     </div>
@@ -95,11 +95,11 @@
                            </div>
                            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
                                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                               <span class="sr-only">Previous</span>
+                               <%--<span class="sr-only">Previous</span> --%>
                            </a>
                            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
                                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                               <span class="sr-only">next</span>
+                               <%--<span class="sr-only">next</span>--%>
                            </a>
                        </div>
                    </div>

@@ -24,11 +24,27 @@ public class FirstMenuServiceImpl implements IFirstMenuService {
     @Autowired
     FirstMenuMapper mapper;
 
+    /**
+     * @Description 查询出所有的一级菜单
+     * @author  watermelon
+     * @param null
+     * @return List<FirstMenuEntity>
+     * @exception
+     * @date   2019/1/7 22:54
+     */
     @Override
     public List<FirstMenuEntity> listAll() {
         return mapper.listAll();
     }
 
+    /**
+     * @Description 根据名字查询出一级菜单
+     * @author  watermelon
+     * @param name
+     * @return FirstMenuEntity
+     * @exception
+     * @date   2019/1/7 22:54
+     */
     @Override
     public FirstMenuEntity getFirstMenuByName(String name) {
         return mapper.getFirstMenuByName(name);

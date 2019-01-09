@@ -14,7 +14,13 @@ import lombok.Data;
  **/
 @Data
 public class FirstMenuEntity {
-    int firstMenuId;
+    /**
+     * firstMenuId:一级菜单编号
+     * firstMenuName:一级菜单名称
+     * firstMenuUrl:一级菜单URL
+     * firstMenuFlag:显示标识
+     */
+    Long firstMenuId;
     String firstMenuName;
     String firstMenuUrl;
     int firstMenuFlag;

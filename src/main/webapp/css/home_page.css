@@ -38,7 +38,13 @@ a:hover{
 	font-size: 14px;
 	width: 90%;
 	height: 40px;
-	color: #EBEBEB;
+	color: #000000;
+}
+.twoMenus{
+	background-color: #dedede;
+}
+.firstMenus{
+	background-color: #293782;
 }
 .container .navbar-form button[type="submit"]{
 	position: absolute;
@@ -89,9 +95,6 @@ a:hover{
 .dropdown-menu li a:hover{
 	color: #FFFFFF;
 	background-color: #293782;
-}
-.disan .form-control::placeholder{
-	color: #FFFFFF;
 }
 
 #demo .carousel .carousel-inner{

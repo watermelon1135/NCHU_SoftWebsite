@@ -11,7 +11,7 @@
 	<!--<cache />
 	&lt;!&ndash; 查询一级菜单列表 &ndash;&gt;-->
 	<select id="listAll" resultMap="FirstMneuMap">
-		select firstmenuid,firstmenuname,firstmenuurl from FirstLevel_Menu
+		select firstmenuid,firstmenuname,firstmenuurl from FirstLevel_Menu WHERE flag = 1
 	</select>
 
 	<select id="getFirstMenuByName" resultMap="FirstMneuMap" parameterType="string">

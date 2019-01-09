@@ -1,10 +1,8 @@
 package com.nchu.software.page.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-import java.util.*;
+import java.util.List;
 
 /**
  * @ClassName Menu
@@ -16,9 +14,11 @@ import java.util.*;
 
 @Data
 public class Menu {
-
-
-    private FirstMenuEntity firstMenu;    // 一级菜单对象
-    private List list;             //二级菜单列表
+    /**
+     * firstMenu:一级菜单对象
+     * list:二级菜单列表
+     */
+    private FirstMenuEntity firstMenu;
+    private List list;
 
 }

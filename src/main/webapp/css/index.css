@@ -4,6 +4,9 @@
 	border: none;
 	background:none;
 }
+/*.disan .form-control::placeholder{*/
+	/*color: #FFFFFF;*/
+/*}*/
 .container .row .panel .panel-heading{
 	height: 42px;
 	color: #0f1010;
@@ -76,6 +79,7 @@
 .disan .form-group .form-control{
 	float: left;
 	width: 50%;
+	color: #FFFFFF;
 	background: none;
 	border: 1px solid #FFFFFF;
 	border-radius: 24px;

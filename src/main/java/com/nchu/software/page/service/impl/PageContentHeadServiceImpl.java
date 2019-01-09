@@ -22,8 +22,17 @@ public class PageContentHeadServiceImpl implements IPageContentHeadService {
     @Autowired
     private PageContentHeadMapper headMapper;
 
+    /**
+     * @Description 根据二级菜单id和要查询的数量查出相应的页面表头信息
+     * @author  watermelon
+     * @param secondMenuId
+     * @param number
+     * @return
+     * @exception
+     * @date   2019/1/7 22:54
+     */
     @Override
-    public ArrayList<PageContentHead> queryNew(Integer secondMenuId, Integer number) {
-        return headMapper.queryNew(secondMenuId, number);
+    public ArrayList<PageContentHead> listPageContentHeadBySecondId(Long secondMenuId, Integer number) {
+        return headMapper.listPageContentHeadBySecondId(secondMenuId, number);
     }
 }

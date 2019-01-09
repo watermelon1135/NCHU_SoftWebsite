@@ -14,6 +14,24 @@ import java.util.List;
  **/
 
 public interface IFirstMenuService {
+
+    /**
+     * 查询出所有的一级菜单
+     * @author  watermelon
+     * @param null
+     * @return  List
+     * @exception
+     * @date   2019/1/7 22:46
+    */
     List<FirstMenuEntity> listAll();
-    FirstMenuEntity getFirstMenuByName(String secondName);
+
+    /**
+     * 根据名字查询出一级菜单
+     * @author  watermelon
+     * @param name
+     * @return  FirstMenuEntity
+     * @exception
+     * @date   2019/1/7 22:46
+    */
+    FirstMenuEntity getFirstMenuByName(String name);
 }

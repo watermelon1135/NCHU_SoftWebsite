@@ -18,20 +18,8 @@
     <script src="../../js/jquery-3.3.1.min.js"></script>
     <script src="../../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="../../js/homepage.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            var strs = window.location.toString();
-            strs = strs.split("/");
-            strs=strs[strs.length-1];
-            //alert(strs);
-            $(".catlog li").eq(parseInt(strs)-1).addClass("twoMenus").siblings().removeClass("twoMenus");
-        })
-    </script>
-    <style type="text/css">
-        .twoMenus{
-            background-color: #ddffff;
-        }
-    </style>
+
+
 </head>
 <body>
 <jsp:include page="/WEB-INF/jsp/indexTop.jsp"/>
@@ -42,9 +30,9 @@
                 <div class="catlog-selected"><span style="line-height: 55px;height: 55px;">
                     ${firstMenu}</span></div>
                 <ul class="catlog">
-                <c:forEach items="${twoMenus}" var="twoMenu">
-                    <li><a href="/${twoMenu.secondMenuUrl}" title="${twoMenu.secondMenuName}">${twoMenu.secondMenuName}</a></li>
-                </c:forEach>
+                    <c:forEach items="${twoMenus}" var="twoMenu">
+                        <li><a href="/${twoMenu.secondMenuUrl}" title="${twoMenu.secondMenuName}">${twoMenu.secondMenuName}</a></li>
+                    </c:forEach>
                 </ul>
             </div>
             <div class="nr-right">
@@ -59,6 +47,9 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+
+</script>
 <jsp:include page="/WEB-INF/jsp/indexBottom.jsp"/>
 </body>
 </html>
