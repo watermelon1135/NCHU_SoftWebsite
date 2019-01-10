@@ -1,6 +1,7 @@
 package com.nchu.software.page.mapper;
 
 import com.nchu.software.page.entity.FirstMenuEntity;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -30,9 +31,13 @@ public interface FirstMenuMapper {
 	 * @Description 根据一级菜单名称查询一级菜单信息
 	 * @author  watermelon
 	 * @param name
+	 * @param flag
 	 * @return  FirstMenuEntity
 	 * @exception
 	 * @date   2019/1/7 22:54
 	 */
-	FirstMenuEntity getFirstMenuByName(String name);
+	FirstMenuEntity getFirstMenuByName(@Param("name") String name);
+
+	List<FirstMenuEntity> listAllByFlag(int flag);
+
 }

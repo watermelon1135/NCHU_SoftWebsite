@@ -6936,7 +6936,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
                     frameborder: "0",
                     //先注释掉了，加的原因忘记了，但开启会直接导致全屏模式下内容多时不会出现滚动条
 //                    scrolling :'no',
-                    src: 'javascript:void(function(){document.open();' + (options.customDomain && document.domain != location.hostname ?  'document.domain="' + document.domain + '";' : '') +
+                    src: 'javascript:void(function(){document.open();' + (options.customDomain && document.domain != location.hostname ?  'document.entity="' + document.domain + '";' : '') +
                         'document.write("' + html + '");document.close();}())'
                 }));
                 container.style.overflow = 'hidden';

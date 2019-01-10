@@ -27,7 +27,6 @@ public class FirstMenuServiceImpl implements IFirstMenuService {
     /**
      * @Description 查询出所有的一级菜单
      * @author  watermelon
-     * @param null
      * @return List<FirstMenuEntity>
      * @exception
      * @date   2019/1/7 22:54
@@ -38,7 +37,7 @@ public class FirstMenuServiceImpl implements IFirstMenuService {
     }
 
     /**
-     * @Description 根据名字查询出一级菜单
+     * @Description 根据名字和标志为查询出一级菜单
      * @author  watermelon
      * @param name
      * @return FirstMenuEntity
@@ -48,5 +47,10 @@ public class FirstMenuServiceImpl implements IFirstMenuService {
     @Override
     public FirstMenuEntity getFirstMenuByName(String name) {
         return mapper.getFirstMenuByName(name);
+    }
+
+    @Override
+    public List<FirstMenuEntity> listAllByFlag(int flag) {
+        return mapper.listAllByFlag(flag);
     }
 }

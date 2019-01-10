@@ -14,8 +14,12 @@
 		select firstmenuid,firstmenuname,firstmenuurl from FirstLevel_Menu WHERE flag = 1
 	</select>
 
-	<select id="getFirstMenuByName" resultMap="FirstMneuMap" parameterType="string">
-		select firstmenuid,firstmenuname,firstmenuurl from FirstLevel_Menu where firstmenuname = #{firstmenuname}
+	<select id="getFirstMenuByName" resultMap="FirstMneuMap">
+		select firstmenuid,firstmenuname,firstmenuurl from FirstLevel_Menu where firstmenuname = #{name}
+	</select>
+
+	<select id="listAllByFlag" resultMap="FirstMneuMap">
+		select firstmenuid,firstmenuname,firstmenuurl from FirstLevel_Menu where flag=#{flag}
 	</select>
 
 </mapper>

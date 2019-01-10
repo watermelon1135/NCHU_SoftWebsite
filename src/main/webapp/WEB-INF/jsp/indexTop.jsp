@@ -66,7 +66,7 @@
         <div>
             <ul class="nav navbar-nav">
                 <c:forEach items="${menus}" var="menu">
-                    <li class="dropdown"><a href="/${menu.firstMenu.firstMenuUrl}" onclick=""><span>${menu.firstMenu.firstMenuName}</span></a>
+                    <li class="dropdown"><a href="/${menu.firstMenu.firstMenuUrl}.html" onclick=""><span>${menu.firstMenu.firstMenuName}</span></a>
                         <c:if test="${not empty menu.list}">
                             <ul class="dropdown-menu">
                                 <c:forEach items="${menu.list}" var="twoMenu">

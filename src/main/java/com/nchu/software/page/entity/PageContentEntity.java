@@ -17,7 +17,6 @@ public class PageContentEntity implements Serializable{
 	 * uploadTime:上传时间
 	 * count:点击数
 	 * status:状态
-	 * pageContextUrl:页面URL
 	 */
 	private Long pageContextId;
 	private Long secondMenuId;
@@ -28,7 +27,7 @@ public class PageContentEntity implements Serializable{
 	private Date uploadTime;
 	private Integer count;
 	private Integer status;
-	private String pageContextUrl;
+	//private String pageContextUrl;
 	//private Integer verify;
 	//private Integer published;
 

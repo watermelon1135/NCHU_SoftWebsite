@@ -25,5 +25,5 @@ public class PageContentHead {
     private Long pageContextId;
     private String title;
     private Date uploadTime;
-    private String pageContextUrl;
+    /*private String pageContextUrl;*/
 }

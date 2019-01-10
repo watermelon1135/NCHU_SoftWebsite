@@ -1,7 +1,7 @@
 package com.nchu.software.manager.mapper;
 
 
-import com.nchu.software.manager.domain.TestDoamin;
+import com.nchu.software.manager.entity.TestDoamin;
 
 import java.util.List;
 

@@ -31,7 +31,7 @@
                     ${firstMenu}</span></div>
                 <ul class="catlog">
                     <c:forEach items="${twoMenus}" var="twoMenu">
-                        <li><a href="/${twoMenu.secondMenuUrl}" title="${twoMenu.secondMenuName}">${twoMenu.secondMenuName}</a></li>
+                        <li><a href="/${twoMenu.secondMenuUrl}.html" title="${twoMenu.secondMenuName}">${twoMenu.secondMenuName}</a></li>
                     </c:forEach>
                 </ul>
             </div>

@@ -26,7 +26,7 @@ public interface IFirstMenuService {
     List<FirstMenuEntity> listAll();
 
     /**
-     * 根据名字查询出一级菜单
+     * 根据名字和标志位查询出一级菜单
      * @author  watermelon
      * @param name
      * @return  FirstMenuEntity
@@ -34,4 +34,7 @@ public interface IFirstMenuService {
      * @date   2019/1/7 22:46
     */
     FirstMenuEntity getFirstMenuByName(String name);
+
+    List<FirstMenuEntity> listAllByFlag(int flag);
+
 }

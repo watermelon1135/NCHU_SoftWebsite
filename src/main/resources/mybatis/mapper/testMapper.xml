@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nchu.software.manager.mapper.TestMapper">
 
-    <resultMap id="baseMap" type="com.nchu.software.manager.domain.TestDoamin">
+    <resultMap id="baseMap" type="com.nchu.software.manager.entity.TestDoamin">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
         <result property="date" column="date"/>

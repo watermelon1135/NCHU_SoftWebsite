@@ -1,0 +1,82 @@
+.row-fluid{
+	height: 80px;
+	background-color: #FFFFFF;
+}
+.row-fluid .logo{
+	float: left;
+	width: 20%;
+	height: 65px;
+	margin: 6px 0px 0px 50px;
+}
+.row-fluid .logo img{
+	width: 80%;
+	height: 65px;
+}
+.exit{
+	float: right;
+	width: 26%;
+	padding: 16px 72px 0px 0px;
+}
+.exit span{
+	float: left;
+	font-size: 16px;
+	color: #161517;
+	margin-top: 20px;
+}
+.exit-btn{
+	padding-top: 21px;
+}
+.exit-btn a{
+	text-decoration: none;
+	color: #161517;
+	font-weight:bold ;
+}
+/*.exit button{
+	background-color: #161517;
+	color: #F8F8F8;
+	float: left;
+	margin-top: 10px;
+} 
+.exit button:hover{
+	background-color: #161517;
+	color: #F8F8F8;
+}
+.exit button:visited{
+	background-color: #161517;
+	color: #F8F8F8;
+}*/
+.col-md-2{
+	padding-left: 0px;
+}
+.administ{
+	width: 100%;
+	height: 100px;
+	background-color: #000000;
+}
+.administ img{
+	float: left;
+	width: 18%;
+	height: 60px;
+	margin: 22px 20px 0px 50px;
+}
+.name{
+	width: 36%;
+	float: left;
+	color: #ECE8E8;
+	margin-top: 28px;
+}
+#main-nav li{
+	
+}
+.nav .nav-header{
+	font-size: 20px;
+	height: 50px;
+	/*padding-left: 50px;*/
+}
+.nav-tabs span.glyphicon-chevron-down:before {
+    content: "\e113";
+}
+.nav-tabs .collapsed span.glyphicon-chevron-down:before {
+    content: "\e114";
+}
+

@@ -75,9 +75,9 @@ public class IndexController {
 
     @RequestMapping({"/index"," ","/"})
     public String index(HttpSession session,Model model){
-        //if (session.getAttribute("menus") == null){
+        if (session.getAttribute("menus") == null){
             InitTopConetnt(session);
-      //  }
+        }
         SecondMenuEntity news = queryTwoMenu(GENERAL0);
         List newsHeads = queryNew(news.getSecondMenuId(), TOTAL_NEWS);
         model.addAttribute("news",news);
@@ -127,7 +127,7 @@ public class IndexController {
      * @date   2019/1/7 22:29
     */
     private void InitTopConetnt(HttpSession session){
-        List<FirstMenuEntity> firstMenus = firstMenuService.listAll();
+        List<FirstMenuEntity> firstMenus = firstMenuService.listAllByFlag(1);
         List<Menu> menus = new ArrayList<>();
         for(int i = 0;i < firstMenus.size();i ++){
             List<SecondMenuEntity> twoMenu = secondMenuService.getSecondMenuByFirstId(firstMenus.get(i).getFirstMenuId());

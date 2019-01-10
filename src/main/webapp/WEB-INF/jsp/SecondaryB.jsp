@@ -31,7 +31,7 @@
                     ${firstMenu}</span></div>
                 <ul class="catlog">
                     <c:forEach items="${twoMenus}" var="twoMenu">
-                        <li><a href="/${twoMenu.secondMenuUrl}" title="${twoMenu.secondMenuName}">${twoMenu.secondMenuName}</a></li>
+                        <li><a href="/${twoMenu.secondMenuUrl}.html" title="${twoMenu.secondMenuName}">${twoMenu.secondMenuName}</a></li>
                     </c:forEach>
                 </ul>
             </div>
@@ -42,7 +42,7 @@
                 <div class="c-events">
                     <ul>
                         <c:forEach items="${pagecontexts}" var="page" varStatus="index">
-                        <li><a href="/${page.pageContextUrl}" target="_blank" title="${page.title}"> ${page.title}</a>
+                        <li><a href="/item/${page.pageContextId}" target="_blank" title="${page.title}"> ${page.title}</a>
                             <% Date date = new Date();pageContext.setAttribute("nowDate",date); %>
                                  <c:if test="${(nowDate.time-page.uploadTime.time)<3600000*24*30}"><img src="../../img/qipao.png"/></c:if><span><fmt:formatDate value="${page.uploadTime}" pattern="MM-dd" /></span></li>
                         </li>

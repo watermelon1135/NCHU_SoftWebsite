@@ -33,5 +33,20 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--配置错误页面-->
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <map>
+                <entry key="ResourceNotFoundException" value="NotFoundError" />
+                <entry key="DataAccessException" value="InternalError" />
+            </map>
+        </property>
+        <property name="statusCodes">
+            <map>
+                <entry key="NotFoundError" value="404" />
+                <entry key="InternalError" value="500" />
+            </map>
+        </property>
+    </bean>
 
 </beans>

@@ -33,6 +33,9 @@
 	<select id="getSecondMenuBySecondId" parameterType="long" resultMap="BaseMap">
 		select secondmenuid,secondmenuname,secondmenuurl from twolevel_menu where secondmenuid = #{secondmenuid};
 	</select>
+	<!--<select id="getSecondMenuBySecondId" parameterType="long" resultMap="BaseMap">
+		select secondmenuid,secondmenuname,secondmenuurl from twolevel_menu where secondmenuid = #{secondmenuid};
+	</select>-->
 
 	<!-- 查询所有的二级菜单 -->
 	<!--<select id="findList" resultType="secondMenuEntity">
