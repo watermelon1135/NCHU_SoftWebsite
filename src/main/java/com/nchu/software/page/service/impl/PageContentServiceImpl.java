@@ -62,4 +62,44 @@ public class PageContentServiceImpl implements IPageContentService {
     public PageContentEntity getPageContentById(Long pageId) {
         return mapper.getPageByPageContextId(pageId);
     }
+
+    @Override
+    public int updateIncrementCount(Long pageContextId) {
+       return  mapper.updateIncrementCount(pageContextId);
+    }
+
+    @Override
+    public int updatePageContent(PageContentEntity pageContentEntity) {
+        return mapper.updatePageContent(pageContentEntity);
+    }
+
+    @Override
+    public int addPageContent(PageContentEntity pageContentEntity) {
+        return mapper.addPageContent(pageContentEntity);
+    }
+
+    @Override
+    public int addToRecycle(Integer pageContextId) {
+        return mapper.addToRecycle(pageContextId);
+    }
+
+    @Override
+    public int removeToRecycle(Integer pageContextId) {
+        return mapper.removeToRecycle(pageContextId);
+    }
+
+    @Override
+    public int deletePageContent(Integer pageContextId) {
+        return mapper.deletePageContent(pageContextId);
+    }
+
+    @Override
+    public List<PageContentEntity> listRecycle() {
+        return mapper.listRecycle();
+    }
+
+    @Override
+    public List<PageContentEntity> listPageContentByKeyword(String keyword) {
+        return mapper.listPageContentByKeyword(keyword);
+    }
 }

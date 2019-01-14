@@ -24,9 +24,10 @@ public class PageContentEntity implements Serializable{
 	private String author;
 	private String context;
 	private String source;
+	//@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date uploadTime;
-	private Integer count;
-	private Integer status;
+	private Integer count = 0;
+	private Integer status = 1;
 	//private String pageContextUrl;
 	//private Integer verify;
 	//private Integer published;

@@ -3128,7 +3128,7 @@ SVGRenderer.prototype = {
 		renderer.boxWrapper = boxWrapper;
 		renderer.alignedObjects = [];
 
-		// page url used for internal references. #24, #672, #1070
+		// Page url used for internal references. #24, #672, #1070
 		renderer.url = (isFirefox || isWebKit) && doc.getElementsByTagName('base').length ?
 			loc.href
 				.replace(/#.*?$/, '') // remove the hash

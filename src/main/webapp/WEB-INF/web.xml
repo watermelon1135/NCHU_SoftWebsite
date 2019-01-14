@@ -98,4 +98,13 @@
         <servlet-name>default</servlet-name>
         <url-pattern>/image/*</url-pattern>
     </servlet-mapping>
+
+
+	<!--jsp配置-->
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>/WEB-INF/func.tld</url-pattern><!--与tld中uri一致就可 -->
+			<include-coda>/WEB-INF/func.tld</include-coda><!-- tld所在的位置-->
+		</jsp-property-group>
+	</jsp-config>
 </web-app>

@@ -1,5 +1,6 @@
 package com.nchu.software.manager.controller;
 
+import com.nchu.software.commons.constant.ManagerMenuNames;
 import com.nchu.software.manager.entity.AdministratorEntity;
 import com.nchu.software.manager.service.IAdministratorService;
 import com.nchu.software.page.entity.FirstMenuEntity;
@@ -32,6 +33,7 @@ import static com.nchu.software.commons.util.ThisSystemUtil.md5;
 @Controller
 public class AdminController {
 
+    private static final String SESSION_ADMIN="administrator";
 
     @Autowired
     IFirstMenuService firstMenuService;
@@ -40,9 +42,10 @@ public class AdminController {
     @Autowired
     IAdministratorService administratorService;
 
-    @RequestMapping(path = "/administration",method = RequestMethod.POST)
+    @RequestMapping(path = "/login",method = RequestMethod.POST)
     public String index(String username, String password, HttpSession session, HttpServletRequest request){
         //通过用户名查询管理员信息
+
         AdministratorEntity administratorEntity = administratorService.findUserByUsername(username);
         //加密
         String password2 = md5(password);
@@ -54,14 +57,28 @@ public class AdminController {
         }
         //加载管理员界面信息
         InitTopConetnt(session);
-        session.setAttribute("AdminName",username);
-        return "Administration";
+        //将管理员信息放入session
+        session.setAttribute(SESSION_ADMIN,administratorEntity);
+        return "management/Administration";
     }
 
+    @RequestMapping(path = "/login",method = RequestMethod.GET)
+    public String indexGet(HttpSession session){
+        if (session.getAttribute(SESSION_ADMIN)!=null){
+            return "management/Administration";
+        }
+        return "forward:/index";
+    }
+
+    @RequestMapping(path = "/logout")
+    public String Logout(HttpSession session){
+        session.removeAttribute("administrator");
+        return "redirect:/index";
+    }
 
     private void InitTopConetnt(HttpSession session){
         //管理员界面一级菜单名数组
-        String[] firstMenuNmaes={"党务院务","人才培养","科学研究","工会工作","招生就业","建议信箱"};
+        String[] firstMenuNmaes=ManagerMenuNames.FIRST_MENU_NAMES;
 
         //根据一级菜单名称查询一级菜单信息
         List<FirstMenuEntity> firstMenus = new ArrayList<>();

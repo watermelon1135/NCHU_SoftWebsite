@@ -75,9 +75,9 @@ public class IndexController {
 
     @RequestMapping({"/index"," ","/"})
     public String index(HttpSession session,Model model){
-        if (session.getAttribute("menus") == null){
+        //if (session.getAttribute("menus") == null){
             InitTopConetnt(session);
-        }
+      //  }
         SecondMenuEntity news = queryTwoMenu(GENERAL0);
         List newsHeads = queryNew(news.getSecondMenuId(), TOTAL_NEWS);
         model.addAttribute("news",news);

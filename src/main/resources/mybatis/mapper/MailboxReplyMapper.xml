@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.software.mailbox.mapper.MailboxReplyMapper">
+    <insert id="insertMailboxReply" parameterType="com.nchu.software.mailbox.entity.MailboxReplyEntity">
+        insert into mailboxreply(MAILBOXASKID,CONTEXT,REPLYTIME,REPLYAPPENDIX)
+        values (#{mailboxAskId}, #{context}, #{replyTime}, #{replyAppendix});
+    </insert>
+
+    <select id="getMailboxReplyEntity" parameterType="int" resultType="com.nchu.software.mailbox.entity.MailboxReplyEntity">
+        select * from mailboxreply where mailboxaskid = #{mailboxAskId};
+    </select>
+</mapper>

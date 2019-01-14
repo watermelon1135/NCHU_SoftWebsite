@@ -104,7 +104,6 @@
                 alert("密码不能为空！！");
                 return;
             }
-            frm.action="/administration";
             frm.submit();
         }
 
@@ -235,7 +234,7 @@
         </div>
 
         <div class="disan" style="float: left;">
-            <form  name="frm" method="post" class="form-horizontal" role="form">
+            <form  name="frm" action="/login" method="post" class="form-horizontal" role="form">
                 <div style="padding-top: 6px;">
                     <span>统一认证登录</span>&nbsp;&nbsp;&nbsp;<span style="color: red">${msg}</span>
                 </div>

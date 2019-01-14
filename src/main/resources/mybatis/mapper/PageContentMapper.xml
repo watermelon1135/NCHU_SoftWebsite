@@ -32,4 +32,61 @@
         SELECT <include refid="pagecontext"/> FROM  page_context WHERE  pagecontextid=#{pageContextId}
     </select>
 
+    <!--根据关键字进行查询-->
+    <select id="listPageContentByKeyword" parameterType="string" resultMap="BaseMap">
+        SELECT <include refid="pagecontext"/> FROM page_context WHERE status=1 AND
+        (title like "%"#{_parameter}"%" OR author like "%"#{_parameter}"%" OR
+         context like "%"#{_parameter}"%" OR source like "%"#{_parameter}"%" OR
+         uploadtime like binary "%"#{_parameter}"%") order by uploadtime desc
+    </select>
+
+    <!--更新页面内容-->
+    <update id="updatePageContent" parameterType="com.nchu.software.page.mapper.PageContentMapper">
+        UPDATE page_context
+        SET secondmenuid = #{secondMenuId},
+        title = #{title},
+        author = #{author},
+        context = #{context},
+        source = #{source},
+        uploadtime = #{uploadTime},
+        count = #{count},
+        status = #{status}
+        WHERE pagecontextid = #{pageContextId}
+    </update>
+
+    <!--删除页面内容-->
+    <delete id="deletePageContent">
+        DELETE FROM page_context WHERE pagecontextid = #{pageContextId}
+    </delete>
+
+    <!--将页面加入到回收站-->
+    <update id="addToRecycle">
+        UPDATE page_context
+        SET status = 2
+        WHERE pagecontextid = #{pageContextId}
+    </update>
+
+    <!--将页面从回收站中回收-->
+    <update id="removeToRecycle">
+        UPDATE page_context
+        SET status = 1
+        WHERE pagecontextid = #{pageContextId}
+    </update>
+
+    <!--添加页面内容-->
+    <insert id="addPageContent" useGeneratedKeys="true" keyProperty="pageContextId" parameterType="com.nchu.software.page.entity.PageContentEntity">
+        insert into page_context(secondmenuid,title,author,context,source,uploadtime,count,status)
+        values (#{secondMenuId},#{title},#{author},#{context},#{source},#{uploadTime},#{count},#{status})
+    </insert>
+
+    <!--更新页面内容-->
+    <update id="updateIncrementCount">
+        UPDATE page_context SET count = count+1 WHERE pagecontextid = #{pageContextId}
+    </update>
+
+    <!--获取回收站所有内容-->
+    <select id="listRecycle" resultMap="BaseMap">
+        select <include refid="pagecontext"/> from page_context where status=2 order by uploadtime desc
+    </select>
+
 </mapper>

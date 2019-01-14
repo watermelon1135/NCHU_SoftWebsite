@@ -43,4 +43,28 @@ public interface IPageContentService {
      * @date   2019/1/7 22:54
      */
     PageContentEntity getPageContentById(Long pageId);
+
+    /**
+     * @Description //阅读次数+1
+     * @author  watermelon
+     * @param pageContextId
+     * @return
+     * @exception
+     * @date   2019/1/10 14:34
+     */
+    int updateIncrementCount(Long pageContextId);
+
+    int updatePageContent(PageContentEntity pageContentEntity);
+
+    int addPageContent(PageContentEntity pageContentEntity);
+
+    int addToRecycle(Integer pageContextId);
+
+    int removeToRecycle(Integer pageContextId);
+
+    int deletePageContent(Integer pageContextId);
+
+    List<PageContentEntity> listRecycle();
+
+    List<PageContentEntity> listPageContentByKeyword(String keyword);
 }

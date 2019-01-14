@@ -31,7 +31,7 @@
     </select>
 
 	<select id="getSecondMenuBySecondId" parameterType="long" resultMap="BaseMap">
-		select secondmenuid,secondmenuname,secondmenuurl from twolevel_menu where secondmenuid = #{secondmenuid};
+		select <include refid="secondmenu"></include> from twolevel_menu where secondmenuid = #{secondmenuid};
 	</select>
 	<!--<select id="getSecondMenuBySecondId" parameterType="long" resultMap="BaseMap">
 		select secondmenuid,secondmenuname,secondmenuurl from twolevel_menu where secondmenuid = #{secondmenuid};

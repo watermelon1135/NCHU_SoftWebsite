@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -31,6 +30,11 @@ import java.util.List;
  **/
 @Controller
 public class SecondMenuController {
+
+    /**
+     * 新新闻和旧新闻的界限，这里是30天
+     */
+    private static final int SHOW_NEW_DAYS=30;
 
     @Autowired
     ISecondMenuService secondMenuService;
@@ -71,7 +75,7 @@ public class SecondMenuController {
         }
         Page page = PageHelper.startPage(pages.getPageNum(), pages.getPageSize(), true);
         List<PageContentEntity> pageContentEntities = pageService.listContextsBySecondId(secondId);
-        List<Boolean> isNew=new ArrayList<>();
+       // List<Boolean> isNew=new ArrayList<>();
         pages.setPageNumAll((long) Math.ceil(page.getTotal()*1.0/pages.getPageSize()));
 
         String firstMenuName = secondMenuService.getFirstMenuName(firstId);
@@ -88,6 +92,7 @@ public class SecondMenuController {
             mv.addObject("pages",pages);
             mv.addObject("pagesBegin",(Math.ceil(pages.getPageNum()/5.0)-1)*5+1);
             mv.addObject("pagesEnd",pages.getPageNumAll()<(Math.ceil(pages.getPageNum()/5.0)*5)?pages.getPageNumAll():(Math.ceil(pages.getPageNum()/5.0)*5));
+            mv.addObject("showNewDate",SHOW_NEW_DAYS);
             mv.setViewName("SecondaryB");
         }
         return mv;

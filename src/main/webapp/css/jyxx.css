@@ -1,0 +1,51 @@
+.date{
+	width: 8%;
+	height: 64px;
+	float: left;
+}
+.day{
+	display: block;
+	color: #161517;
+	font-size: 20px;
+	text-align: center;
+	width: 100%;
+	height: 30px;
+	background-color: #EDEDED;
+}
+.month{
+	display: block;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 20px;
+	text-align: center;
+	width: 100%;
+	height: 30px;
+	background-color: #293782;	
+}
+.month:hover{
+	text-decoration: none;
+	color: #FFFFFF;
+	background-color: #293782;
+}
+.title{
+	float: left;
+	width: 50%;
+	height: 64px;
+	margin-left: 20px;
+}
+.title h2{
+	margin: 0px;
+	height: 32px;
+}
+.title ul{
+	width: 100%;
+	margin-top: 20px;
+	padding-left: 0px;
+	height: 20px;
+	list-style: none;
+}
+.title ul li{
+	float: left;
+	margin-right: 50px;
+}
+

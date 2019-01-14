@@ -40,7 +40,7 @@
                     <span>${two.secondMenuName}</span>
                 </div>
                 <div class="nr-content">
-                    <fmt:formatDate value="${pagecontext.uploadTime}" pattern="MM月dd日" />
+                    <%--<fmt:formatDate value="${pagecontext.uploadTime}" pattern="MM月dd日" />--%>
                     ${pagecontext.context}
                 </div>
             </div>

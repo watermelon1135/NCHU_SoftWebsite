@@ -1,5 +1,7 @@
 package com.nchu.software.format;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.convert.converter.Converter;
 
 import java.text.ParseException;
@@ -18,16 +20,23 @@ import java.util.Date;
  **/
 public class CustomDateConverter implements Converter<String,Date> {
 
+    Logger LOG = LoggerFactory.getLogger(this.getClass());
+
+    private String datePattern;
+
+    public void setDatePattern(String datePattern) {
+        this.datePattern = datePattern;
+    }
+
     @Override
-    public Date convert(String source) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    public Date convert(String s) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat(this.datePattern);
         try {
-            //解析成功就返回
-            return sdf.parse(source);
-        } catch (ParseException e) {
-            e.printStackTrace();
+            Date date = dateFormat.parse(s);
+            return date;
+        }catch (ParseException e){
+            LOG.error("convertError",e);
         }
-        //否则返回null
         return null;
     }
 }

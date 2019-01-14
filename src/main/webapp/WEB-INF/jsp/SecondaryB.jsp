@@ -44,22 +44,12 @@
                         <c:forEach items="${pagecontexts}" var="page" varStatus="index">
                         <li><a href="/item/${page.pageContextId}" target="_blank" title="${page.title}"> ${page.title}</a>
                             <% Date date = new Date();pageContext.setAttribute("nowDate",date); %>
-                                 <c:if test="${(nowDate.time-page.uploadTime.time)<3600000*24*30}"><img src="../../img/qipao.png"/></c:if><span><fmt:formatDate value="${page.uploadTime}" pattern="MM-dd" /></span></li>
+                                 <c:if test="${(nowDate.time-page.uploadTime.time)<3600000*24*showNewDate}"><img src="../../img/qipao.png"/></c:if><span><fmt:formatDate value="${page.uploadTime}" pattern="MM-dd" /></span></li>
                         </li>
                         </c:forEach>
-
                     </ul>
                 </div>
 
-                <%--<div class="pa">
-                    <ul class="pagination">
-                        <li><a href=" <c:if test="${pages.pageNum!=1}">/${two.secondMenuUrl}?pagenum=${pages.pageNum-1}</c:if>"> &laquo;</a></li>
-                        <c:forEach var="i" begin="1" end="${pages.pageNumAll }">
-                            <li class="<c:if test="${i==pages.pageNum}">active</c:if> "><a href="/${two.secondMenuUrl}?pagenum=${i}">${i}</a></li>
-                        </c:forEach>
-                        <li><a href=" <c:if test="${pages.pageNum!=pages.pageNumAll}">/${two.secondMenuUrl}?pagenum=${pages.pageNum+1}</c:if>">&raquo;</a></li>
-                    </ul>
-                </div>--%>
                 <div class="pa">
                     <ul class="pagination">
                         <li><a href=" <c:if test="${pages.pageNum!=1}">/${two.secondMenuUrl}?pagenum=${pages.pageNum-1}</c:if>"> &laquo;</a></li>
@@ -73,7 +63,6 @@
                         <li><a href="/${two.secondMenuUrl}?pagenum=${pages.pageNum+5}">...</a></li>
                         </c:if>
                         <li><a href=" <c:if test="${pages.pageNum!=pages.pageNumAll}">/${two.secondMenuUrl}?pagenum=${pages.pageNum+1}</c:if>">&raquo;</a></li>
-
                 </div>
             </div>
         </div>

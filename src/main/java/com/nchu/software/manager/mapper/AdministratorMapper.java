@@ -21,7 +21,7 @@ public interface AdministratorMapper {
      * @param username
      * @return  AdministratorEntity
      * @exception 
-     * @date   2019/1/10 11:29
+     * @date   2019/1/10 13:28
     */
     AdministratorEntity findUserByUsername(String username);
 }

@@ -15,8 +15,9 @@ public class PageContentController {
     IPageContentService pageContentService;
 
     @RequestMapping("item/{pageId}")
-    public ModelAndView showKxyjPage(@PathVariable Long pageId, ModelAndView mv) {
+    public ModelAndView showPageContent(@PathVariable Long pageId, ModelAndView mv) {
         PageContentEntity pageContextEntity = pageContentService.getPageContentById(pageId);
+        pageContentService.updateIncrementCount(pageId);
         mv.addObject("pagecontext",pageContextEntity);
         mv.setViewName("SecondaryD");
         return mv;

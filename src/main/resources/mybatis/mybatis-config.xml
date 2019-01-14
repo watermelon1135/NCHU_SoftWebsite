@@ -3,9 +3,27 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
+
+
     <settings>
         <setting name="logImpl" value="LOG4J"/>
     </settings>
+
+    <typeAliases>
+        <!-- <typeAlias type="com.nchu.software.mailbox.entity.MailboxAskEntity" alias="mailboxAsk"/>
+        <typeAlias type="com.nchu.software.mailbox.entity.MailboxReplyEntity" alias="mailboxReply"/>-->
+        <typeAlias type="com.nchu.software.mailbox.entity.MailboxAskHeadEntity" alias="mailboxAskHead"/>
+
+        <typeAlias type="com.nchu.software.mailbox.entity.MailboxAskEntity" alias="askAuthor" />
+        <typeAlias type="com.nchu.software.mailbox.entity.MailboxReplyEntity" alias="replyEntity"/>
+        <typeAlias type="com.nchu.software.mailbox.entity.MailboxAskType" alias="mailboxType"/>
+        <typeAlias type="com.nchu.software.mailbox.entity.MailboxListEntity" alias="mailboxList"/>
+
+
+    </typeAliases>
+
+
     <!-- 配置分页插件 -->
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageInterceptor">

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.software.mailbox.mapper.MailboxAskMapper">
+
+    <insert id="insertMailBox" parameterType="com.nchu.software.mailbox.entity.MailboxAskEntity">
+        insert into mailboxask(ASKNAME,TITLE,CONTEXT,MAILBOXTYPE,ASKTIME,MAILBOX,PHONE,ASKAPPENDIX,READCOUNT,FLAG,QUERYCODE,NAMEFLAG)
+        values (#{askName},#{title},#{context},#{mailboxType},#{askTime},#{mailbox},#{phone},#{askAppendix},#{readCount},#{flag},#{queryCode},#{nameFlag})
+    </insert>
+    <select id="selectHot" resultType="com.nchu.software.mailbox.entity.MailboxAskHot">
+        select mailboxaskid,title from mailboxask  WHERE flag=2 order by readcount desc limit 0,5
+    </select>
+    <select id="selectByQueryCode" parameterType="string" resultType="com.nchu.software.mailbox.entity.MailboxAskEntity">
+        select *  from mailboxask where querycode = #{_parameter}
+    </select>
+    <select id="getMailboxReplyEntity" parameterType="int" resultType="com.nchu.software.mailbox.entity.MailboxReplyEntity">
+        select * from mailboxreply where mailboxaskid = #{mailboxAskId};
+    </select>
+    <update id="updateCount" parameterType="int">
+        update mailboxask set readcount = readcount+1 where mailboxaskid = #{mailboxaskid}
+    </update>
+    <select id="selectList" resultType="com.nchu.software.mailbox.entity.MailboxListEntity">
+        select a.mailboxaskid,askname,title,a.context,c.mailboxtypename,asktime,readcount,b.replytime from mailboxask a
+        left join (select d.mailboxaskid,replytime from mailboxreply d) b on a.mailboxaskid=b.mailboxaskid
+        left join (select mailboxtypename,mailboxtypeid from mailboxtype) c on a.mailboxtype=c.mailboxtypeid
+        where a.flag = 2 order by b.replytime desc,readcount desc,asktime desc
+    </select>
+    <select id="selectDetailById" resultType="com.nchu.software.mailbox.entity.MailboxAskEntity" parameterType="int">
+        select * from mailboxask where mailboxaskid = #{mailboxid}
+    </select>
+    <update id="commit" parameterType="com.nchu.software.mailbox.entity.Commit">
+        update mailboxreply set satisfied = #{satisfied} where mailboxreplyid = #{mailboxreplyid}
+    </update>
+    <select id="selectTypeList" resultType="com.nchu.software.mailbox.entity.MailboxAskType">
+        select mailboxtypeid,mailboxtypename from mailboxtype where mailboxtypeflag = 1
+    </select>
+    <select id="selectTypeNameById" resultType="string" parameterType="int">
+        select mailboxtypename from mailboxtype where mailboxtypeid=#{mailboxtypeid}
+    </select>
+    <select id="queryByKeyword" parameterType="string" resultType="com.nchu.software.mailbox.entity.MailboxListEntity">
+        select a.mailboxaskid,askname,title,a.context,c.mailboxtypename,asktime,readcount,b.replytime from mailboxask a
+        left join (select d.mailboxaskid,replytime from mailboxreply d) b on a.mailboxaskid=b.mailboxaskid
+        left join (select mailboxtypename,mailboxtypeid from mailboxtype) c on a.mailboxtype=c.mailboxtypeid
+        where a.flag = 2 and (title like '%${_parameter}%' or context like '%${_parameter}%') order by b.replytime desc,readcount desc,asktime desc
+    </select>
+
+
+    <select id="listAll" parameterType="int" resultType="com.nchu.software.mailbox.entity.MailboxAskHeadEntity">
+        select mailboxaskid,askname,title,context,mailboxtype,asktime,readcount,flag
+        from mailboxask where mailboxtype = #{mailboxType} and flag = #{flag} order by asktime desc
+    </select>
+    <select id="getMailboxAskEntity" parameterType="int" resultType="com.nchu.software.mailbox.entity.MailboxAskEntity">
+        select *  from mailboxask where mailboxaskid = #{mailboxAskId};
+    </select>
+    
+    <update id="updateFlag" parameterType="int">
+        update mailboxask set flag = #{flag} where mailboxaskid = #{mailboxAskId}
+    </update>
+</mapper>

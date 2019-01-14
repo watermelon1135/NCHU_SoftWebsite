@@ -38,6 +38,18 @@
 <div class="row-fluid">
     <div class="main">
         <div class="container" style="background-color: #F8F8F8;">
+
+            <div>
+                <span style="font-size: 30px;margin-left:30%;font-family: 宋体;"><b>${pagecontext.title}</b></span>
+                <hr>
+                    <div style="margin-left:30%;">
+                        作者: ${pagecontext.author}&nbsp;&nbsp;来源: ${pagecontext.source}&nbsp;&nbsp;
+                        发布时间: <fmt:formatDate value="${pagecontext.uploadTime}" pattern="yyyy年MM月dd日"/>&nbsp;&nbsp;
+                        点击数: ${pagecontext.count}&nbsp;
+                    </div>
+
+                <hr>
+           </div>
             <div>
                 ${pagecontext.context}
             </div>

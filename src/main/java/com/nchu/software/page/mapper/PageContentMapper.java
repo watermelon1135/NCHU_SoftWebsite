@@ -41,4 +41,29 @@ public interface PageContentMapper {
      * @date   2019/1/7 22:54
      */
     PageContentEntity getPageByPageContextId(Long id);
+
+    /**
+     * @Description //阅读次数+1
+     * @author  watermelon
+     * @param pageContextId
+     * @return  
+     * @exception 
+     * @date   2019/1/10 14:34
+    */
+    int updateIncrementCount(Long pageContextId);
+
+    int updatePageContent(PageContentEntity pageContentEntity);
+
+    int addPageContent(PageContentEntity pageContentEntity);
+
+    int deletePageContent(Integer pageContextId);
+
+    int addToRecycle(Integer pageContextId);
+
+    int removeToRecycle(Integer pageContextId);
+
+    List<PageContentEntity> listRecycle();
+
+    List<PageContentEntity> listPageContentByKeyword(String keyword);
+
 }
