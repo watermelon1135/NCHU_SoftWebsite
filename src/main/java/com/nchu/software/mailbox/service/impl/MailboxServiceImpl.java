@@ -94,6 +94,11 @@ public class MailboxServiceImpl implements IMailboxAskService,IMailboxReplyServi
     }
 
     @Override
+    public int deleteMailboxAskById(int mailboxAskId) {
+        return mailboxAskMapper.deleteMailboxAskById(mailboxAskId);
+    }
+
+    @Override
     public int updateFlag(int mailboxAskId, int flag) {
         return mailboxAskMapper.updateFlag(mailboxAskId,flag);
     }

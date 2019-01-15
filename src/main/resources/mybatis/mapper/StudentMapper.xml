@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.software.teachingAffairs.mapper.StudentMapper">
+    <insert id="listInsert" parameterType="java.util.List" >
+        insert into student_info (stuNo,classNo,name,idCard,sex,nation,political,source,
+        intentedDate,graduationDate,phone,email,dormitory_Id,fatherPhone,motherPhone,
+        familyPhone,familyAddress,zipCode,QQNo,micromessageNo,status) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.stuNo},#{item.classNo},#{item.name},#{item.idCard},#{item.sex},#{item.nation},
+            #{item.political},#{item.source},#{item.intentedDate},#{item.graduationDate},#{item.phone},
+            #{item.email},#{item.dormitoryId},#{item.fatherPhone},#{item.motherPhone},#{item.familyPhone},
+            #{item.familyAddress},#{item.zipCode},#{item.QQNo},#{item.micromessageNo},#{item.status})
+        </foreach>
+    </insert>
+
+    <select id="listClass" parameterType="int" resultType="com.nchu.software.teachingAffairs.entity.StudentEntity">
+        select stuNo,name from student_info where classNo = #{classNo}
+    </select>
+
+</mapper>

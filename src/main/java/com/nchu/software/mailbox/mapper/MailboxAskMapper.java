@@ -30,4 +30,5 @@ public interface MailboxAskMapper {
     List<MailboxAskHeadEntity> listAll(@Param("mailboxType") int mailboxType, @Param("flag") int flag);
     MailboxAskEntity getMailboxAskEntity(int mailboxAskId);
     int updateFlag(@Param("mailboxAskId") int mailboxAskId, @Param("flag") int flag);
+    int deleteMailboxAskById(int mailboxAskId);
 }

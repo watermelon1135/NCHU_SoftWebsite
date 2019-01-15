@@ -256,7 +256,7 @@
             <div class="letter">
                 <div class="xinxiang" style="width: 100%; height:150px ;">
                     <img src="/img/home_page_slices/xinxiang.png" style="float: left; padding-left: 10px;"/>
-                    <a href="" style="float: right;"><img src="/img/home_page_slices/xin.png"/></a>
+                    <a href="/mailboxshow.html" style="float: right;"><img src="/img/home_page_slices/xin.png"/></a>
                 </div>
             </div>
         </div>

@@ -114,7 +114,8 @@
        width:50%;
         display: inline;
     }
-    label{
+    .error label{
+
         display: inline;
         cursor: pointer;
         float: left;
@@ -150,12 +151,9 @@
         background-color: #055FA5;
         color: #FFFFFF;
     }
-    #title-error #secondMenuId-error{
+    .error{
         color:red;
-        float: right;
-        width: 100px;
-        margin-right: 220px;
-        display: inline;
+
     }
 
 </style>

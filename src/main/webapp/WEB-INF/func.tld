@@ -13,10 +13,23 @@
             将Date类型数据提取月份并转换为中文
         </description>
         <name>changeMonth</name>
-        <function-class>com.nchu.software.commons.util.MonthUtil</function-class>
+        <function-class>com.nchu.software.commons.util.JstlUtil</function-class>
         <function-signature>java.lang.String changeMonth(java.util.Date)</function-signature>
         <example>
             Product name: ${func.changeMonth(java.util.Date)}
         </example>
     </function>
+
+    <function>
+        <description>
+            //
+        </description>
+        <name>changeRelevance</name>
+        <function-class>com.nchu.software.commons.util.JstlUtil</function-class>
+        <function-signature>java.lang.String changeRelevance(java.lang.String)</function-signature>
+        <example>
+            Product name: ${func.changeRelevance(java.lang.String)}
+        </example>
+    </function>
+
 </taglib>

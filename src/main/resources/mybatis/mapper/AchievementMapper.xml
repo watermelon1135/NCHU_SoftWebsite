@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.software.teachingAffairs.mapper.AchievementMapper">
+    <insert id="listInsert" parameterType="java.util.List" >
+        insert into achievement_info (stuNo,courseNO,experimentalResults,normalResults,
+        midtermResults,finalResults,totalResults,flag) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.stuNo},#{item.courseNO},#{item.experimentalResults},
+            #{item.normalResults},#{item.midtermResults},#{item.finalResults},#{item.totalResults},#{item.flag})
+        </foreach>
+    </insert>
+
+   <select id="listAchievement" parameterType="String" resultType="float">
+        select totalResults from achievement_info where stuNo = #{stuNo}
+    </select>
+</mapper>

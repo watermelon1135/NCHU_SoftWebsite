@@ -22,8 +22,8 @@
 <%--<jsp:include page="WEB-INF/jsp/SecondaryB.jsp"/>--%>
 
 
-<div class="row-fluid">
-    <div class="footer">
+<div class="row-fluid" >
+    <div class="footer"style="margin-top: 10px;">
         <div class="container" style="padding: 10px 0px; width: 100%; height: 150px;">
             <div class="fo">
                 <img src="../../img/home_page_slices/software2.png"/>

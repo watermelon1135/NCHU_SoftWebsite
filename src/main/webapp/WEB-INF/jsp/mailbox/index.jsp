@@ -82,7 +82,7 @@
 <body>
 <jsp:include page="jyxxTop.jsp"></jsp:include>
 <div class="container">
-    <div class="col-md-9" style="margin-top: 30px;padding: 0px 50px 0px 0px;">
+    <div class="col-md-9" style="margin-top: 30px;padding: 0px 50px 0px 0px;height: ${askmailboxlist.size()*220}px;">
         <div class="nr-content">
             <div class="container" style="float:left; height: 600px;">
                 <c:forEach items="${askmailboxlist}" var="item">
@@ -117,7 +117,6 @@
                             <c:if test="${fn:length(item.context)<=100 }">
                                 <p>${item.context }</p>
                             </c:if>
-
                             <div class="detail"
                                  style="float: right; background-color: #293782; margin-right: 30px; width: 10%;height: 30px;">
                                 <a href="/showdetail?mailboxaskid=${item.mailboxAskId}"
@@ -167,7 +166,7 @@
         </li>
 
 </div>
-<jsp:include page="jyxxBottom.jsp"></jsp:include>
+<jsp:include page="../indexBottom.jsp"></jsp:include>
 
 <script type="text/javascript">
     function query() {

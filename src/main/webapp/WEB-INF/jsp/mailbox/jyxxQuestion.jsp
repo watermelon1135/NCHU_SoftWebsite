@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>信箱提问</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet"
           href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrapValidator.min.css">
@@ -22,6 +22,8 @@
             src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/fileinput.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/zh.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/zh_CN.js"></script>
+    <script type="text/javascript" charset="UTF-8" src ="${pageContext.request.contextPath}/js/jquery.validate.js"></script>
+    <script type="text/javascript" charset="UTF-8" src ="${pageContext.request.contextPath}/js/messages_zh.js"></script>
     <style type="text/css">
         .btn:hover {
             background-color: #055FA5;
@@ -108,20 +110,63 @@
                 return false
             }
         }
+        $.validator.setDefaults({
+            submitHandler: function() {
+               // alert("提交事件!");
+            }
+        })
+        function myvaildate() {
+            if ($("#mailboxtype").val() == ""){
+                alert("请选择提问类型!");
+                return false;
+            }
+            if ($("#title").val() == ""){
+                alert("请填写提问标题!");
+                $("#title").focus;
+                return false;
+            }
+            if ($("#context").val() == ""){
+                alert("请填写提问内容!");
+                $("#context").focus;
+                return false;
+            }
+            form1.submit;
+        }
+        /*$().ready(function () {
+            $("#addto").validate({
+                rules:{
+                    mailboxtype:"required",
+                    title:"required",
+                    context:"required"
+                }
+            });*/
+
+           /* $("#doReset").click(function() {
+                if (confirm("确认要重置吗?")){
+                    editor.setContent("");
+                    $("#page")[0].reset();
+                }
+                return false;
+            });
+            $("#doReturn").click(function () {
+                history.back(-1);
+            });*/
+
+       // })
     </script>
 </head>
 <body>
 <jsp:include page="jyxxTop.jsp"></jsp:include>
 <div class="container">
-    <form action="/handle" method="post" enctype="multipart/form-data">
+    <form action="/handle" name="form1" method="post" id="addto" enctype="multipart/form-data">
         <div class="col-md-6" style="margin-top: 30px;padding: 0px 50px 0px 0px;width: 20%;">
             <div class="nr-content">
                 <div class="container" style="margin: 50px; height: 600px;">
                     <div class="form-group" style=" width: 50%;">
                         <div style="width: 60%;float:left;">
                             <label style="float:left;line-height: 30px">类型:</label>
-                            <select name="mailboxtype" class="form-control" style=" width: 50%;float: left;">
-                                <option>------请选择-----</option>
+                            <select name="mailboxtype" id="mailboxtype" class="form-control" style=" width: 50%;float: left;">
+                                <option value="">------请选择-----</option>
                                 <c:forEach items="${typeList}" var="item">
                                     <option value='${item.mailboxtypeid}'>${item.mailboxtypename}</option>
                                 </c:forEach>
@@ -158,11 +203,11 @@
 
                     <div class="form-group">
                         <label>标题:</label>
-                        <input type="text" class="form-control" name="title" style=" width: 50%;" placeholder="请输入标题"/>
+                        <input type="text" id="title" class="form-control" name="title" style=" width: 50%;" placeholder="请输入标题"/>
                     </div>
                     <div class="form-group">
                         <label>建议内容:</label>
-                        <textarea name="context" rows="10" cols="" class="form-control" style=" width: 50%;"
+                        <textarea name="context" id="context" rows="10" cols="" class="form-control" style=" width: 50%;"
                                   placeholder="请输入内容"></textarea>
                     </div>
                     <div class="form-group">
@@ -174,83 +219,15 @@
                     </div>
 
                     <div class="form-group" style="width: 50%;text-align: center">
-                        <button type="submit" class="btn" style="color:#ffffff ;background-color:#055fa5"
+                        <button type="" onclick="return myvaildate()" class="btn" style="color:#ffffff ;background-color:#055fa5"
                         >提交</button>
                     </div>
 
                 </div>
 
             </div>
-
         </div>
     </form>
-
-
-    <script type="text/javascript">
-        $(function () {
-            $('#myfile').fileinput({
-                language: 'zh',
-                uploadUrl: location.pathname + 'upload/',
-                showCaption: true,
-                showUpload: true,
-                showRemove: true,
-                showClose: true,
-                layoutTemplates: {
-                    actionDelete: ''
-                },
-                browseClass: 'btn btn-primary'
-            });
-            $('form').bootstrapValidator({
-                message: 'This value is not valid',
-                feedbackIcons: {
-                    valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
-                },
-                fields: {
-                    title: {
-                        message: '请输入标题',
-                        validators: {
-                            notEmpty: {
-                                message: '标题不能为空'
-                            },
-                        }
-                    },
-                    Recommend: {
-                        message: '请输入建议内容',
-                        validators: {
-                            notEmpty: {
-                                message: '建议内容不能为空'
-                            },
-                        }
-                    },
-                    mailbox: {
-                        validators: {
-                            emailAddress: {
-                                message: '邮箱地址格式有误'
-                            }
-                        }
-                    },
-                    phone: {
-                        validators: {
-                            regexp: {
-                                regexp: /^1\d{10}$/,
-                                message: '请输入正确的11位手机号'
-                            }
-                        }
-                    },
-                    Type: {
-                        message: '请选择类型',
-                        validators: {
-                            notEmpty: {
-                                message: '类型不能为空'
-                            },
-                        }
-                    }
-                }
-            });
-        });
-    </script>
 
 
     <div class="col-md-3" style="float:right">
@@ -271,6 +248,13 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    function query() {
+        var keyword = document.getElementById("keyword");
+        //alert(keyword.value)
+        window.location.href = "/search?queryCode=" + keyword.value;
+    }
+</script>
 <jsp:include page="jyxxBottom.jsp"></jsp:include>
 
 </body>

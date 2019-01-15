@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.software.teachingAffairs.mapper.CourseMapper">
+    <insert id="listInsert" parameterType="java.util.List" >
+        insert into Course_info (courseNo,courseTypeNo,courseName,totalHour,theoryHour,experimentHour,credit,memo) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.courseNo},#{item.courseTypeNo},#{item.courseName},#{item.totalHour},
+            #{item.theoryHour},#{item.experimentHour},#{item.credit},#{item.memo})
+        </foreach>
+    </insert>
+
+</mapper>

@@ -60,8 +60,8 @@ public class PageManagementController {
 
     @RequestMapping({"/admin/xygk/{firstId}/{secondId}","/admin/zsjy/{firstId}/{secondId}",
             "/admin/kxyj/{firstId}/{secondId}", "/admin/ghgz/{firstId}/{secondId}",
-            "/admin/bszn/{firstId}/{secondId}", "/admin/rcpy/{firstId}/{secondId}",
-            "/admin/dwyw/{firstId}/{secondId}", "/admin/jyxx/{firstId}/{secondId}"})
+             "/admin/rcpy/{firstId}/{secondId}", "/admin/dwyw/{firstId}/{secondId}",
+            "/admin/jyxx/{firstId}/{secondId}", "/admin/basz/{firstId}/{secondId}"})
     public ModelAndView showPageDetail(@PathVariable Long firstId, @PathVariable Long secondId,
                                        HttpServletRequest request,
                                        @RequestParam(required = false)Integer pagenum, ModelAndView mv){
@@ -95,6 +95,14 @@ public class PageManagementController {
     /*private void initPages(){
 
     }*/
+
+    @RequestMapping("/admin/bszn/{pageUrlId}")
+    public ModelAndView showbszn(@PathVariable Integer pageUrlId, ModelAndView modelAndView){
+        String[] pagesUrl ={"leadingexcel.jsp","trend.jsp"};
+        modelAndView.addObject("pageUrl",pagesUrl[pageUrlId-1]);
+        modelAndView.setViewName("teachingAffairs/bszn");
+        return modelAndView;
+    }
 
     @RequestMapping(value ="/admin/updatecontent/{id}",method = RequestMethod.GET)
     public ModelAndView updateContentById(@PathVariable Long id, ModelAndView modelAndView){

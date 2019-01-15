@@ -81,7 +81,7 @@
                 <img src="/img/main/guanliyuan.png"/>
                 <div class="name">
                     <span style="font-size: 24px;font-weight: bold; margin-left: 4px;">姓名</span><br />
-                    <span style="font-size: 12px;font-weight: normal;">${administrator.name}</span>
+                    <span style="font-size: 20px;font-weight: normal;">&nbsp;&nbsp;${administrator.name}</span>
                 </div>
 
             </div>
@@ -101,6 +101,17 @@
                         </c:if>
                     </li>
                 </c:forEach>
+                <li>
+                    <a href="#999" data-toggle="collapse" class="nav-header">
+                        学院信箱
+                        <span class="pull-right glyphicon glyphicon-chevron-down"></span>
+                    </a>
+                    <ul id="999" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                        <c:forEach items="${typeList}" var="type">
+                            <li><a href="/mailbox/${type.mailboxtypeid}/1" target="_self" onclick="jupm()">${type.mailboxtypename}</a></li>
+                        </c:forEach>
+                    </ul>
+                </li>
                 <li>
                     <a href="/admin/recycleList" data-toggle="collapse" onclick="jupm('/admin/recycleList')" class="nav-header">
                         回收站

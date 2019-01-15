@@ -56,4 +56,8 @@
     <update id="updateFlag" parameterType="int">
         update mailboxask set flag = #{flag} where mailboxaskid = #{mailboxAskId}
     </update>
+
+    <delete id="deleteMailboxAskById" parameterType="int">
+        delete from mailboxask where mailboxaskid=#{mailboxAskId}
+    </delete>
 </mapper>

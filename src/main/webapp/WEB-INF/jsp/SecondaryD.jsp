@@ -18,6 +18,22 @@
     <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/homepage.js"></script>
+    <style>
+        body{
+            height: 100%;
+            width: 100%;
+        }
+        .main{
+            width: 100%;
+            background: url(../img/xyjj_slices/background.png) no-repeat;
+            background-attachment: fixed;
+            /*height: 100%;*/
+            width: 100%;
+            position: absolute;
+            background-size: 100% 100%;
+            background-position: center center;
+        }
+    </style>
     <script type="text/javascript">
         $(function () {
             var strs = window.location.toString();
@@ -38,7 +54,6 @@
 <div class="row-fluid">
     <div class="main">
         <div class="container" style="background-color: #F8F8F8;">
-
             <div>
                 <span style="font-size: 30px;margin-left:30%;font-family: 宋体;"><b>${pagecontext.title}</b></span>
                 <hr>

@@ -27,4 +27,5 @@ public interface IMailboxAskService {
     List<MailboxAskHeadEntity> listAll(int mailboxType, int flag);
     MailboxAskEntity getMailboxAskEntity(int mailboxAskId);
     int updateFlag(int mailboxAskId, int flag);
+    int deleteMailboxAskById(int mailboxAskId);
 }

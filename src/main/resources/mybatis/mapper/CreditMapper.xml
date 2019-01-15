@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nchu.software.teachingAffairs.mapper.CreditMapper">
+    <select id="selectEarlyWarning" resultType="string">
+        select stuId from hangingsection where credit &gt;= 15
+    </select>
+    <select id="selectCourses" resultType="string">
+        select coursename from course_info where courseno in
+        (select courseno from achievement_info
+        where totalresults &lt; 60 and stuno = #{_parameter})
+    </select>
+    <select id="selectStuInfo" parameterType="string" resultType="com.nchu.software.teachingAffairs.entity.StudentCreditEntity">
+        select name,phone,familyphone from student_info where stuno = #{_parameter}
+    </select>
+    <select id="selectAllNetwork" resultType="com.nchu.software.teachingAffairs.entity.NetworkEntity">
+        select * from test_table
+    </select>
+</mapper>

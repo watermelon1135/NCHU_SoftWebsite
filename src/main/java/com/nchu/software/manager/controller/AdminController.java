@@ -1,6 +1,8 @@
 package com.nchu.software.manager.controller;
 
 import com.nchu.software.commons.constant.ManagerMenuNames;
+import com.nchu.software.mailbox.entity.MailboxAskType;
+import com.nchu.software.mailbox.service.IMailboxAskService;
 import com.nchu.software.manager.entity.AdministratorEntity;
 import com.nchu.software.manager.service.IAdministratorService;
 import com.nchu.software.page.entity.FirstMenuEntity;
@@ -41,6 +43,8 @@ public class AdminController {
     ISecondMenuService secondMenuService;
     @Autowired
     IAdministratorService administratorService;
+    @Autowired
+    IMailboxAskService mailboxAskService;
 
     @RequestMapping(path = "/login",method = RequestMethod.POST)
     public String index(String username, String password, HttpSession session, HttpServletRequest request){
@@ -76,9 +80,12 @@ public class AdminController {
         return "redirect:/index";
     }
 
+
     private void InitTopConetnt(HttpSession session){
         //管理员界面一级菜单名数组
         String[] firstMenuNmaes=ManagerMenuNames.FIRST_MENU_NAMES;
+        //加载信箱菜单
+        List<MailboxAskType> typeList = mailboxAskService.selectTypeList();
 
         //根据一级菜单名称查询一级菜单信息
         List<FirstMenuEntity> firstMenus = new ArrayList<>();
@@ -98,5 +105,6 @@ public class AdminController {
             menus.add(menu);
         }
         session.setAttribute("adminMenus",menus);
+        session.setAttribute("typeList",typeList);
     }
 }

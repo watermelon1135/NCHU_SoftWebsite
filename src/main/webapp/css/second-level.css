@@ -8,6 +8,8 @@ body{
 	background: url(../img/xyjj_slices/background.png) no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
+	/*height: 100%;*/
+	/*background-size: 100% 100%;*/
 	background-position: center center;
 }
 .list-left{

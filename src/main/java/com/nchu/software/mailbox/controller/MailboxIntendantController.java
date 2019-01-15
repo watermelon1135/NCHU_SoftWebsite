@@ -55,6 +55,7 @@ public class MailboxIntendantController {
         List<MailboxAskHeadEntity> mailboxAskHeads = mailboxServiceImpl.listAll(mailboxType,flag);
         pages.setPageNumAll((long) Math.ceil(page.getTotal()*1.0/pages.getPageSize()));
         model.addAttribute("mailboxAskHeads",mailboxAskHeads);
+        model.addAttribute("mailboxType",mailboxType);
         model.addAttribute("pages",pages);
         model.addAttribute("pagesBegin",(Math.ceil(pages.getPageNum()/5.0)-1)*5+1);
         model.addAttribute("pagesEnd",pages.getPageNumAll()<(Math.ceil(pages.getPageNum()/5.0)*5)?pages.getPageNumAll():(Math.ceil(pages.getPageNum()/5.0)*5));
@@ -119,6 +120,22 @@ public class MailboxIntendantController {
         return "redirect:/mailbox/"+vo.getMailboxType() +"/"+vo.getOldFlag(); //返回页面
     }
 
+    /**
+     * @Description //TODO
+     * @author  watermelon
+     * @param type
+     * @param flag
+     * @param askId
+     * @return
+     * @exception
+     * @date   2019/1/15 9:53
+    */
+    @RequestMapping(value = "/mailbox/delete/{type}/{flag}/{askId}")
+    public String deleteAsk(@PathVariable int type,@PathVariable int flag,@PathVariable int askId){
+        mailboxServiceImpl.deleteMailboxAskById(askId);
+        return "redirect:/mailbox/"+type +"/"+flag; //返回页面
+
+    }
     /**
      * 方法实现说明
      * @Author 范孝发

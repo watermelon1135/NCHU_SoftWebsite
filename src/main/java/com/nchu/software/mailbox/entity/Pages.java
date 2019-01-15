@@ -19,7 +19,7 @@ public class Pages {
      * pagesize:总页面数
      */
     private Integer pageNum;
-    private Integer PageSize = 2;
+    private Integer PageSize = 8;
     private Long pageNumAll;
 
 }

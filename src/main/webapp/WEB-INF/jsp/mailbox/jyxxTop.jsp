@@ -56,10 +56,10 @@
             <img src="/img/jyxx/logo.png"/>
         </div>
         <div class="ask">
-            <a href="/mailboxshow" target="iframe_a" style="font-size: 20px;text-decoration: none;">首页</a>
+            <a href="/mailboxshow" target="_self" style="font-size: 20px;text-decoration: none;">首页</a>
         </div>
         <div class="ask">
-            <a href="/askQuestion" target="iframe_a" style="font-size: 20px;text-decoration: none;">我要提问</a>
+            <a href="/askQuestion" target="_blank" style="font-size: 20px;text-decoration: none;">我要提问</a>
             <!--<button class="form-control" target="iframe_a">我要提问</button>-->
         </div>
         <div class="exit"><a href="/index">退出</a></div>

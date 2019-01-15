@@ -11,5 +11,5 @@ package com.nchu.software.commons.constant;
  * @Version: 1.0
  **/
 public class ManagerMenuNames {
-    public static String[] FIRST_MENU_NAMES={"党务院务","人才培养","科学研究","工会工作","招生就业"};
+    public static String[] FIRST_MENU_NAMES={"党务院务","人才培养","科学研究","工会工作","招生就业","办事指南"};
 }
